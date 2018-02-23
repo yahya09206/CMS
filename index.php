@@ -18,7 +18,10 @@
                         while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
                             # code...
                             $post_title = $row['post_title'];
-                            $post_title
+                            $post_author = $row['post_author'];
+                            $post_date = $row['post_date'];
+                            $post_img = $row['post_image'];
+                            $post_content = $row['post_title'];
                         }
                 ?>
                 <h1 class="page-header">
