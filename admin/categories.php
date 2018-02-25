@@ -20,7 +20,19 @@
                                 </div>
                             </form>    
                         </div>
+                        <!-- Category Form -->
 
+                        <div class="col-xs-6">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Category Title</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <!-- table div -->
                     </div>
                 </div>
                 <!-- /.row -->
