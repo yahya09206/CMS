@@ -1,5 +1,17 @@
 <div class="col-md-4">
 
+    <?php   
+
+        if (isset($_POST['submit'])) {
+            # code...
+            $search = $_POST['search'];
+            //query to match search terms with tags
+            $query = "SELECT * FROM posts WHERE post_tag LIKE '%$search%' ";
+
+        }
+        
+    ?>
+
 <!-- Blog Search Well -->
 <div class="well">
     <form action="" method="post">
