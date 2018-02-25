@@ -7,6 +7,11 @@
             $search = $_POST['search'];
             //query to match search terms with tags
             $query = "SELECT * FROM posts WHERE post_tag LIKE '%$search%' ";
+            $search_query = mysqli_query($connection, $query);
+
+            if($search_query){
+                die("QUERY FAIL" . mysqli_error($connection));
+            }
 
         }
         
