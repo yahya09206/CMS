@@ -29,10 +29,8 @@
                         if($count == 0){
                             echo "<h1>No Results</h1>";
                         }else{
-                             $query = "SELECT * FROM posts";
-                                $select_all_posts_query = mysqli_query($connection, $query);
 
-                            while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
+                            while ($row = mysqli_fetch_assoc($search_query)) {
                                 # code...
                                 $post_title = $row['post_title'];
                                 $post_author = $row['post_author'];
