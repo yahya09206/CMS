@@ -11,6 +11,14 @@
                             Welcome
                             <small>Author Name</small>
                         </h1>
+                        <div class="col-xs-6">
+                            <form action="">
+                                <div class="form-group">
+                                    <input type="text" name="cat_title">
+                                </div>
+                            </form>    
+                        </div>
+
                     </div>
                 </div>
                 <!-- /.row -->

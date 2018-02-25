@@ -1,8 +1,5 @@
 <?php include "include/admin_header.php" ?>
     <div id="wrapper">
-
-        <?php if($connection) echo "conn"; ?>
-
         <!-- Navigation -->
         <?php include "include/nav.php" ?>
         <div id="page-wrapper">
