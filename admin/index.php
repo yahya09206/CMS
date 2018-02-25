@@ -1,12 +1,15 @@
-<?php include "include/header.php" ?>
+<?php include "include/admin_header.php" ?>
     <div id="wrapper">
+
+        <?php if($connection) echo "conn"; ?>
+
+        <!-- Navigation -->
         <?php include "include/nav.php" ?>
         <div id="page-wrapper">
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-
                         <h1 class="page-header">
                             Welcome
                             <small>Author Name</small>
@@ -18,4 +21,4 @@
             <!-- /.container-fluid -->
         </div>
     <!-- /#page-wrapper -->
- <?php include "include/footer.php" ?>
+ <?php include "include/admin_footer.php" ?>
