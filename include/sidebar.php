@@ -9,8 +9,14 @@
             $query = "SELECT * FROM posts WHERE post_tag LIKE '%$search%' ";
             $search_query = mysqli_query($connection, $query);
 
-            if($search_query){
+            if(!$search_query){
                 die("QUERY FAIL" . mysqli_error($connection));
+            }
+
+            $count = mysqli_num_rows($search_query);
+
+            if($count == 0){
+                echo "<h1>No Results</h1>";
             }
 
         }
