@@ -25,7 +25,7 @@
 
                                         $create_category_query = mysqli_query($connection, $query);
 
-                                        if (!create_category_query) {
+                                        if (!$create_category_query) {
                                             # code...
                                             die('Query Failed' . mysqli_error($connection));
                                         }
