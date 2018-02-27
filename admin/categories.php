@@ -27,7 +27,7 @@
 
                                         if (!create_category_query) {
                                             # code...
-                                            die();
+                                            die('Query Failed' . mysqli_error($connection));
                                         }
                                     }
                                  }
