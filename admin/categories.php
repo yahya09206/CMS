@@ -15,11 +15,11 @@
                             <?php 
                                  if (isset($_POST['submit'])) {
                                      # code...
-                                    echo "string";
+                                    echo "<h1>Hello</h1>";
                                  }
 
                             ?>
-                            <form action="">
+                            <form action="" method="post">
                                 <div class="form-group">
                                     <label for="cat-title">Add Category </label>
                                     <input type="text" class="form-control" name="cat_title">
