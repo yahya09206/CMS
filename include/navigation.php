@@ -39,8 +39,6 @@
                     <li>
                         <a href="#">Contact</a>
                     </li> -->
-
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
