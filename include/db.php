@@ -18,8 +18,4 @@ $connection = mysqli_connect(
 	DB_PW, 
 	DB_NAME);
 
-if($connection){
-	echo "We are connected";
-}
-
 ?>
