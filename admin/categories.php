@@ -54,8 +54,9 @@
                                 <tbody>
                                     <?php 
                                         //FIND ALL CATEGORIES QUERY
-                                        $query = "INSERT INTO categories(cat_title) ";
-                                        $query .= "VALUE('{$cat_title}') ";
+                                        $query = "SELECT * FROM categories ";
+                                        $select_categories = mysqli_query($connection, $query);
+                                        
                                         while ($row = mysqli_fetch_assoc($select_categories)) {
                                             # code...
                                             $cat_id = $row['cat_id'];
@@ -74,6 +75,10 @@
                                     if (isset($_GET['delete'])) {
                                         # code...
                                         $the_cat_id = $_GET['delete'];
+                                        $query = "DELETE FROM categories WHERE cat_id = {$the_cat_id} ";
+                                        $delete_query = mysqli_query($connection, $query);
+                                        //refresh page after clicking delete
+                                        header("Location: categories.php");
 
                                     }
 
