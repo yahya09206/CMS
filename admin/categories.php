@@ -68,6 +68,7 @@
                                             echo "<tr>";
                                             echo "<td>{$cat_id}</td>";
                                             echo "<td>{$cat_title}</td>";
+                                            echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
                                             echo "</tr>";
                                         }
                                     ?>
