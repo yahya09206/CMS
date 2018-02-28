@@ -6,7 +6,6 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-
                         <h1 class="page-header">
                             Welcome
                             <small>Author Name</small>
@@ -44,10 +43,10 @@
                             </form>    
                         </div>
                         <!-- Category Form -->
-
                         <div class="col-xs-6">
 
                             <?php 
+                            //query to select all from categories table
                                 $query = "SELECT * FROM categories"; 
                                 $select_categories = mysqli_query($connection, $query);
 
