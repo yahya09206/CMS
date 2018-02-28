@@ -48,7 +48,6 @@
                                         if(isset($_GET['edit'])) {
                                             # code...
                                             $the_cat_id = $_GET['edit'];
-                                        }
                                         $query = "SELECT * FROM categories WHERE cat_id = $the_cat_id ";
                                         $select_categories_id = mysqli_query($connection, $query);
 
@@ -58,7 +57,7 @@
                                             $cat_title = $row['cat_title'];
                                             ?>
                                             <input value="<?php if(isset($cat_title)){echo $cat_title;} ?>" type="text" class="form-control" name="cat_title">
-                                        <?php } ?>
+                                        <?php }} ?>
                                     <input class="btn btn-primary" type="submit" name="submit" value="Update Category">
                                 </div>
                             </form>    
