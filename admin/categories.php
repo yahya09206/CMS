@@ -44,7 +44,21 @@
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label for="cat-title">Edit Category </label>
-                                    <input type="text" class="form-control" name="cat_title">
+                                    <?php 
+                                        if(isset($_GET['edit'])) {
+                                            # code...
+                                            $the_cat_id = $_GET['edit'];
+                                        }
+                                        $query = "SELECT * FROM categories WHERE cat_id = {$the_cat_id} ";
+                                        $select_categories_id = mysqli_query($connection, $query);
+
+                                        while ($row = mysqli_fetch_assoc($select_categories_id)) {
+                                            # code...
+                                            $cat_id = $row['cat_id'];
+                                            $cat_title = $row['cat_title'];
+                                            ?>
+                                            <input value="<?php if(isset($cat_title)){echo $cat_title;} ?>" type="text" class="form-control" name="cat_title">
+                                        <?php } ?>
                                     <input class="btn btn-primary" type="submit" name="submit" value="Update Category">
                                 </div>
                             </form>    
@@ -73,6 +87,7 @@
                                             echo "<td>{$cat_id}</td>";
                                             echo "<td>{$cat_title}</td>";
                                             echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
+                                            echo "<td><a href='categories.php?edit={$cat_id}'>Edit</a></td>";
                                             echo "</tr>";
                                         }
                                     ?>
