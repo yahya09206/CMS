@@ -43,7 +43,7 @@
                             </form> 
                             <form action="" method="post">
                                 <div class="form-group">
-                                    <label for="cat-title">Edit Category </label>
+                                    <label for="cat-title"> Edit Category </label>
                                     <?php 
                                         if(isset($_GET['edit'])) {
                                             # code...
@@ -58,7 +58,7 @@
                                             ?>
                                             <input value="<?php if(isset($cat_title)){echo $cat_title;} ?>" type="text" class="form-control" name="cat_title">
                                         <?php }} ?>
-                                    <input class="btn btn-primary" type="submit" name="submit" value="Update Category">
+                                        <input class="btn btn-primary" type="submit" name="submit" value="Update Category">
                                 </div>
                             </form>    
                         </div>
