@@ -40,6 +40,13 @@
                                     <input type="text" class="form-control" name="cat_title">
                                     <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                                 </div>
+                            </form> 
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="cat-title">Edit Category </label>
+                                    <input type="text" class="form-control" name="cat_title">
+                                    <input class="btn btn-primary" type="submit" name="submit" value="Update Category">
+                                </div>
                             </form>    
                         </div>
                         <!-- Category Form -->
@@ -56,7 +63,7 @@
                                         //FIND ALL CATEGORIES QUERY
                                         $query = "SELECT * FROM categories ";
                                         $select_categories = mysqli_query($connection, $query);
-                                        
+
                                         while ($row = mysqli_fetch_assoc($select_categories)) {
                                             # code...
                                             $cat_id = $row['cat_id'];
