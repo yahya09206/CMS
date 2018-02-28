@@ -44,13 +44,6 @@
                         </div>
                         <!-- Category Form -->
                         <div class="col-xs-6">
-
-                            <?php 
-                            //query to select all from categories table
-                                $query = "SELECT * FROM categories"; 
-                                $select_categories = mysqli_query($connection, $query);
-
-                            ?>
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
@@ -60,6 +53,9 @@
                                 </thead>
                                 <tbody>
                                     <?php 
+                                        //FIND ALL CATEGORIES QUERY
+                                        $query = "INSERT INTO categories(cat_title) ";
+                                        $query .= "VALUE('{$cat_title}') ";
                                         while ($row = mysqli_fetch_assoc($select_categories)) {
                                             # code...
                                             $cat_id = $row['cat_id'];
@@ -71,6 +67,16 @@
                                             echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
                                             echo "</tr>";
                                         }
+                                    ?>
+
+                                    <?php 
+                                        //QUERY TO DELETE SELECTED CATEGORY
+                                    if (isset($_GET['delete'])) {
+                                        # code...
+                                        $the_cat_id = $_GET['delete'];
+
+                                    }
+
                                     ?>
                                 </tbody>
                             </table>
