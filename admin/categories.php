@@ -40,7 +40,15 @@
                                     <input type="text" class="form-control" name="cat_title">
                                     <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                                 </div>
-                            </form>    
+                            </form> 
+
+                            <?php 
+                                if (isset($_GET['edit'])) {
+                                    # code...
+                                    $cat_id = $_GET['edit'];
+                                    include "include/update_cat.php";
+                                }
+                            ?>   
                         </div>
                         <!-- Category Form -->
                         <div class="col-xs-6">
