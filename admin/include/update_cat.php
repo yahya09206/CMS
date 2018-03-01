@@ -23,13 +23,15 @@
                     $the_cat_title = $_POST['cat_title'];
                     $query = "UPDATE categories SET cat_title = '{$the_cat_title}' WHERE cat_id = {$the_cat_id}";
                     $update_query = mysqli_query($connection, $query);
-                        if (!update_query) {
+                        if (!$update_query) {
                             # code...
                         die("QUERY FAILED" . mysqli_error($connection));
                     }
                 }
             ?>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" name="update_category" value="Update Category">
+            </div>
             <!-- UPDATE QUERY ENDS -->
-        <input class="btn btn-primary" type="submit" name="update_category" value="Update Category">
     </div>
 </form> 
