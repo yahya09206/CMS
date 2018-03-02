@@ -34,6 +34,17 @@
         $post_tags = $_POST['post_tag'];
 
         move_uploaded_file($post_image_temp, "../images/$post_image");
+
+        $query = "UPDATE posts SET ";
+        $query .= "post_title = '{$post_title}' ";
+        $query .= "post_category_id = '{$post_title}' ";
+        $query .= "post_date = '{$post_date}' ";
+        $query .= "post_author = '{$post_author}' ";
+        $query .= "post_status = '{$post_status}' ";
+        $query .= "post_tags = '{$post_tags}' ";
+        $query .= "post_content = '{$post_content}' ";
+        $query .= "post_image = '{$post_image}' ";
+        $query .= "WHERE post_id = '{$the_post_id}' ";
     	
     }
 ?>
