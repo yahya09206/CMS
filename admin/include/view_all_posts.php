@@ -41,6 +41,7 @@
                 echo "<td>$post_tags</td>";
                 echo "<td>$post_comment_count</td>";
                 echo "<td>$post_date</td>";
+                echo "<td><a href='view_all_posts.php'>Delete</a></td>";
                 echo "</tr>";
             }
         ?>
@@ -55,3 +56,11 @@
         <td>Date</td>
     </tbody>
 </table>
+<!-- DELETE POST -->
+<?php 
+if (isset($_GET['delete'])) {
+    # code...
+
+}
+
+ ?>
