@@ -5,7 +5,7 @@
 		$the_post_id = $_GET['p_id'];
 	}
 
-	$query = "SELECT * FROM posts ";
+	$query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
     $select_posts = mysqli_query($connection, $query);
 
     while ($row = mysqli_fetch_assoc($select_posts)) {
@@ -31,8 +31,23 @@
 	</div>
 
 	<div class="form-group">
-		<label for="post_category">Post Category ID</label>
-		<input value="<?php echo $post_category_id; ?>" class="form-control" type="text" name="post_category_id">
+		<select name="" id="">
+			<?php 
+				$query = "SELECT * FROM categories";
+		        $select_categories = mysqli_query($connection, $query);
+
+		        confirm($select_categories);
+
+		        while ($row = mysqli_fetch_assoc($select_categories)) {
+		            # code...
+		            $cat_id = $row['cat_id'];
+		            $cat_title = $row['cat_title'];
+
+		            echo "<option value=''>{$cat_title}</option>";
+		        }
+
+			?>
+		</select>
 	</div>
 
 	<div class="form-group">
