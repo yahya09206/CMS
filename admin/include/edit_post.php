@@ -28,20 +28,25 @@
         $post_title = $_POST['post_title'];
         $post_category_id = $_POST['post_category'];
         $post_status = $_POST['post_status'];
-        $post_image = $FILES['image']['name'];
-        $post_image_temp = $FILES['image']['tmp_name'];
+        $post_image = $_FILES['post_image']['name'];
+        $post_image_temp = $_FILES['post_image']['tmp_name'];
         $post_content = $_POST['post_content'];
         $post_tags = $_POST['post_tag'];
 
         move_uploaded_file($post_image_temp, "../images/$post_image");
 
+        if (empty($post_image)) {
+        	# code...
+        	
+        }
+
         $query = "UPDATE posts SET ";
         $query .= "post_title 	= '{$post_title}', ";
-        $query .= "post_category_id = '{$post_title}', ";
-        $query .= "post_date 	= now()' ";
+        $query .= "post_category_id = '{$post_category_id}', ";
+        $query .= "post_date 	= now(), ";
         $query .= "post_author	= '{$post_author}', ";
         $query .= "post_status 	= '{$post_status}', ";
-        $query .= "post_tags	= '{$post_tags}', ";
+        $query .= "post_tag	= '{$post_tags}', ";
         $query .= "post_content = '{$post_content}', ";
         $query .= "post_image 	= '{$post_image}' ";
         $query .= "WHERE post_id = '{$the_post_id}' ";
@@ -56,7 +61,7 @@
 
 	<div class="form-group">
 		<label for="title">Post Title</label>
-		<input value="<?php echo $post_title; ?>" class="form-control" type="text" name="title">
+		<input value="<?php echo $post_title; ?>" class="form-control" type="text" name="post_title">
 	</div>
 
 	<div class="form-group">
@@ -81,7 +86,7 @@
 
 	<div class="form-group">
 		<label for="title">Post Author</label>
-		<input value="<?php echo $post_author; ?>" class="form-control" type="text" name="author">
+		<input value="<?php echo $post_author; ?>" class="form-control" type="text" name="post_author">
 	</div>
 
 	<div class="form-group">
@@ -91,6 +96,7 @@
 
 	<div class="form-group">
 		<img width="100" src="../images/<?php echo $post_image; ?>" alt="">
+		<input type="file" class="form-control" name="post_image">
 	</div>
 
 	<div class="form-group">
