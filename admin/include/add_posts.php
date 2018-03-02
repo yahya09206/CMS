@@ -4,7 +4,7 @@
 		# code...
 		$post_title = $_POST['title'];
 		$post_author = $_POST['author'];
-		$post_category = $_POST['post_category_id'];
+		$post_category_id = $_POST['post_category_id'];
 		$post_status = $_POST['post_status'];
 
 		$post_image = $_FILES['image']['name'];
@@ -20,7 +20,10 @@
 
 		$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tag, post_comment_count, post_status) ";
 
-		$query .= "VALUES({$post_category_id},'{$post_title}', '{$post_author}', now(), '{$post_image}', '{$post_content}', '{$post_tag}', '{$post_comment_count}', '{$post_status}')";
+		$query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_comment_count}','{$post_status}' ) ";
+
+		//Inject into DB
+		$create_post_query = mysqli_query($connection, $query);
 
 	}
 
@@ -50,7 +53,7 @@
 
 	<div class="form-group">
 		<label for="post_image">Post Image</label>
-		<input class="form-control" type="text" name="image">
+		<input class="form-control" type="file" name="image">
 	</div>
 
 	<div class="form-group">
