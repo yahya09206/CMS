@@ -42,6 +42,7 @@
                 echo "<td>$post_comment_count</td>";
                 echo "<td>$post_date</td>";
                 echo "<td><a href='posts.php?delete={$post_id}'>Delete</a></td>";
+                echo "<td><a href='posts.php?edit={$post_id}'>Edit</a></td>";
                 echo "</tr>";
             }
         ?>
