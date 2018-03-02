@@ -1,6 +1,28 @@
-<?php if (condition): ?>
-	
-<?php endif ?>
+<?php 
+
+	if (isset($_POST['create_post'])) {
+		# code...
+		$post_title = $_POST['title'];
+		$post_author = $_POST['author'];
+		$post_category = $_POST['post_category_id'];
+		$post_status = $_POST['post_status'];
+
+		$post_image = $_FILES['image']['name'];
+		$post_image_temp = $_FILES['image']['tmp_name'];
+
+		$post_tags = $_POST['post_tag'];
+		$post_content = $_POST['post_content'];
+		$post_date = date('d-m-y');
+		$post_comment_count = 4;
+
+		// FUNCTION FOR IMAGES
+		move_uploaded_file($post_image_temp, "../images/$post_image");
+
+		$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tag, post_comment_count, post_status) ";
+
+	}
+
+?>
 
 <form action="" method="post" enctype="multipart/form-data">
 
