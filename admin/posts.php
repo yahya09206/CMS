@@ -26,7 +26,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                
+                                    <!--SELECT ALL POSTS QUERY -->
+                                    <?php 
+                                        $query = "SELECT * FROM posts ";
+                                        $select_posts = mysqli_query($connection, $query);
+
+                                        while ($row = mysqli_fetch_assoc($select_categories)) {
+                                            # code...
+                                            $cat_id = $row['cat_id'];
+                                            $cat_title = $row['cat_title'];
+                                        }
+                                    ?>
                                     <td>10</td>
                                     <td>Ferragamo</td>
                                     <td>Luxury</td>
@@ -36,7 +47,6 @@
                                     <td>Tags</td>
                                     <td>Comments</td>
                                     <td>Date</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
