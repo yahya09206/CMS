@@ -40,9 +40,22 @@
                                             $post_category_id = $row['post_category_id'];
                                             $post_status = $row['post_status'];
                                             $post_image = $row['post_image'];
-                                            $post_tags = $row['post_tags'];
+                                            $post_tags = $row['post_tag'];
                                             $post_comment_count = $row['post_comment_count'];
-                                            $post_date = $row['post_date'];
+                                            echo $post_date = $row['post_date'];
+
+                                            //echo row with fields
+                                            echo "<tr>";
+                                            echo "<td>$post_id</td>";
+                                            echo "<td>$post_author</td>";
+                                            echo "<td>$post_title</td>";
+                                            echo "<td>$post_category_id</td>";
+                                            echo "<td>$post_status</td>";
+                                            echo "<td>$post_image</td>";
+                                            echo "<td>$post_tags</td>";
+                                            echo "<td>$post_comment_count</td>";
+                                            echo "<td>$post_date</td>";
+                                            echo "</tr>";
                                         }
                                     ?>
                                     <td>10</td>
