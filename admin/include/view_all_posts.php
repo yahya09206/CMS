@@ -45,15 +45,6 @@
                 echo "</tr>";
             }
         ?>
-        <td>10</td>
-        <td>Ferragamo</td>
-        <td>Luxury</td>
-        <td>Fancy</td>
-        <td>Status</td>
-        <td>Image</td>
-        <td>Tags</td>
-        <td>Comments</td>
-        <td>Date</td>
     </tbody>
 </table>
 <!-- DELETE POST -->

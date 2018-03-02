@@ -24,9 +24,9 @@
                                     # code...
                                 include "include/add_posts.php";
                                     break;
-                                case '100':
+                                case 'edit_post':
                                     # code...
-                                echo "NICE 100";
+                                include "include/edit_post.php";
                                     break;
                                 case '200':
                                     # code...
