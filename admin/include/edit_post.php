@@ -32,6 +32,8 @@
         $post_image_temp = $row['image']['tmp_name'];
         $post_content = $_POST['post_content'];
         $post_tags = $_POST['post_tag'];
+
+        move_uploaded_file($post_image_temp, "../images/$post_image");
     	
     }
 ?>
