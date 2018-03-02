@@ -24,7 +24,15 @@
 
     if (isset($_POST['update_post'])) {
     	# code...
-    	echo "HI";
+        $post_author = $_POST['post_author'];
+        $post_title = $_POST['post_title'];
+        $post_category_id = $_POST['post_category_id'];
+        $post_status = $_POST['post_status'];
+        $post_image = $FILES['image']['name'];
+        $post_image_temp = $row['image']['tmp_name'];
+        $post_content = $_POST['post_content'];
+        $post_tags = $_POST['post_tag'];
+    	
     }
 ?>
 
