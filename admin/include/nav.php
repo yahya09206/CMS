@@ -41,7 +41,7 @@
                         <a href="./posts.php">View All Posts</a>
                     </li>
                     <li>
-                        <a href="#">App Posts</a>
+                        <a href="#">Add Posts</a>
                     </li>
                 </ul>
             </li>
