@@ -25,6 +25,8 @@
 		//Inject into DB
 		$create_post_query = mysqli_query($connection, $query);
 
+		confirm($create_post_query);
+
 	}
 
 ?>

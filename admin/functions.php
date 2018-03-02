@@ -1,4 +1,12 @@
 <?php 
+function confirm($result){
+	global $connection;
+	if (!$result) {
+		# code...
+		die("QUERY FAILED" . mysqli_error($connection));
+	}
+}
+
 function insert_categories(){
 	//global connection
 	global $connection;
@@ -57,4 +65,5 @@ function deleteCategories(){
 
     }
 }
+
 ?>
