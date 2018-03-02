@@ -46,8 +46,7 @@
 	</div>
 
 	<div class="form-group">
-		<label for="post_image">Post Image</label>
-		<input class="form-control" type="file" name="image">
+		<img width="100" src="../images/<?php echo $post_image; ?>" alt="">
 	</div>
 
 	<div class="form-group">
