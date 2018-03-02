@@ -2,7 +2,7 @@
 <?php 
 	if (isset($_GET['p_id'])) {
 		# code...
-		echo $_GET['p_id'];
+		$the_post_id = $_GET['p_id'];
 	}
 
 	$query = "SELECT * FROM posts ";
@@ -16,6 +16,7 @@
         $post_category_id = $row['post_category_id'];
         $post_status = $row['post_status'];
         $post_image = $row['post_image'];
+        $post_content = $row['post_content'];
         $post_tags = $row['post_tag'];
         $post_comment_count = $row['post_comment_count'];
         $post_date = $row['post_date'];
@@ -26,22 +27,22 @@
 
 	<div class="form-group">
 		<label for="title">Post Title</label>
-		<input class="form-control" type="text" name="title">
+		<input value="<?php echo $post_title; ?>" class="form-control" type="text" name="title">
 	</div>
 
 	<div class="form-group">
 		<label for="post_category">Post Category ID</label>
-		<input class="form-control" type="text" name="post_category_id">
+		<input value="<?php echo $post_category_id; ?>" class="form-control" type="text" name="post_category_id">
 	</div>
 
 	<div class="form-group">
 		<label for="title">Post Author</label>
-		<input class="form-control" type="text" name="author">
+		<input value="<?php echo $post_author; ?>" class="form-control" type="text" name="author">
 	</div>
 
 	<div class="form-group">
 		<label for="post_status">Post Status</label>
-		<input class="form-control" type="text" name="post_status">
+		<input value="<?php echo $post_status; ?>" class="form-control" type="text" name="post_status">
 	</div>
 
 	<div class="form-group">
@@ -51,12 +52,12 @@
 
 	<div class="form-group">
 		<label for="post_tag">Post Tags</label>
-		<input class="form-control" type="text" name="post_tag">
+		<input value="<?php echo $post_tags; ?>" class="form-control" type="text" name="post_tag">
 	</div>
 
 	<div class="form-group">
 		<label for="title">Post Content</label>
-		<textarea class="form-contrl" name="post_content" id="" cols="30" rows="10"></textarea>
+		<textarea class="form-contrl" name="post_content" id="" cols="30" rows="10"><?php echo $post_content; ?>"</textarea>
 	</div>
 
 	<div class="form-group">
