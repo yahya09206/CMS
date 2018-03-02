@@ -6,9 +6,9 @@
 	}
 
 	$query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
-    $select_posts = mysqli_query($connection, $query);
+    $select_posts_by_id = mysqli_query($connection, $query);
 
-    while ($row = mysqli_fetch_assoc($select_posts)) {
+    while ($row = mysqli_fetch_assoc($select_posts_by_id)) {
         # code...
         $post_id = $row['post_id'];
         $post_author = $row['post_author'];
@@ -20,6 +20,11 @@
         $post_tags = $row['post_tag'];
         $post_comment_count = $row['post_comment_count'];
         $post_date = $row['post_date'];
+    }
+
+    if (isset($_POST['update_post'])) {
+    	# code...
+    	echo "HI";
     }
 ?>
 
@@ -75,7 +80,7 @@
 	</div>
 
 	<div class="form-group">
-		<input class="btn btn-primary" type="submit" name="create_post" value="Publish Post">
+		<input class="btn btn-primary" type="submit" name="update_post" value="Update Post">
 	</div>
 
 </form>
