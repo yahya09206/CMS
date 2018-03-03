@@ -44,7 +44,7 @@
 	</div>
 
 	<div class="form-group">
-		<label for="title">Post Author</label>
+		<label for="post_author">Post Author</label>
 		<input class="form-control" type="text" name="author">
 	</div>
 
@@ -64,7 +64,7 @@
 	</div>
 
 	<div class="form-group">
-		<label for="title">Post Content</label>
+		<label for="post_content">Post Content</label>
 		<textarea class="form-contrl" name="post_content" id="" cols="30" rows="10"></textarea>
 	</div>
 
