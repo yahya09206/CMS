@@ -33,7 +33,8 @@
                 while ($row = mysqli_fetch_assoc($select_categories_sidebar)) {
                     # code...
                     $cat_title = $row['cat_title'];
-                    echo "<li><a href='category.php?'>{$cat_title}<a/></li>";
+                    $cat_id = $row['cat_id'];
+                    echo "<li><a href='category.php?category=$cat_id'>{$cat_title}<a/></li>";
                 }
 
                 ?>
