@@ -55,7 +55,7 @@
                 <?php 
                     if (isset($_POST['create_comment'])) {
                         # code...
-                        $the_post_id = $_POST['p_id'];
+                        $the_post_id = $_GET['p_id'];
 
                         $comment_author = $_POST['comment_author'];
                         $comment_email = $_POST['comment_email'];
@@ -66,7 +66,10 @@
 
                         //Query To send to datebase
                         $create_comment_query = mysqli_query($connection, $query);
-                        confirm($create_comment_query);
+                        if ($create_comment_query) {
+                            # code...
+                            die('QUERY FAILED' . mysqli_error($connection));
+                        }
                     }
 
                 ?>
