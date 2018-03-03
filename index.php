@@ -25,6 +25,7 @@
                             $post_content = $row['post_title'];
                             //excerpt
                             $post_content = substr($row['post_content'], 0,100);
+                            //MOST UPDATED
 
                 ?>
                 <h1 class="page-header">
