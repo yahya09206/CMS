@@ -3,13 +3,13 @@
         <tr>
             <th>ID</th>
             <th>Author</th>
-            <th>Title</th>
-            <th>Category</th>
+            <th>Comment</th>
+            <th>Email </th>
             <th>Status</th>
-            <th>Images</th>
-            <th>Tags</th>
-            <th>Comments</th>
-            <th>Date</th>
+            <th>In Response To</th>
+            <th>Approve</th>
+            <th>Unapprove</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
