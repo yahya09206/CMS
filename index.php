@@ -23,6 +23,7 @@
                             $post_date = $row['post_date'];
                             $post_img = $row['post_image'];
                             $post_content = $row['post_title'];
+                            $post_content = substr($row['post_content'], 0,100);
 
                 ?>
                 <h1 class="page-header">
