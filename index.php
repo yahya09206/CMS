@@ -23,6 +23,7 @@
                             $post_date = $row['post_date'];
                             $post_img = $row['post_image'];
                             $post_content = $row['post_title'];
+                            //excerpt
                             $post_content = substr($row['post_content'], 0,100);
 
                 ?>
