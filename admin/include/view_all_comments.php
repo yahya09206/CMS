@@ -52,7 +52,6 @@
                 echo "<td>$comment_date</td>";
                 echo "<td><a href='posts.php?source=edit_post&p_id='>Approve</a></td>";
                 echo "<td><a href='posts.php?delete='>Unapprove</a></td>";
-                echo "<td><a href='posts.php?source=edit_post&p_id='>Edit</a></td>";
                 echo "<td><a href='posts.php?delete='>Delete</a></td>";
                 echo "</tr>";
             }
