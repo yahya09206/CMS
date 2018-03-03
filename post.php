@@ -55,8 +55,12 @@
                 <?php 
                     if (isset($_POST['create_comment'])) {
                         # code...
-                        // $create_comment = $_POST['create_comment'];
-                        echo $_POST['comment_author'];
+                        $the_post_id = $_POST['p_id'];
+
+                        $comment_author = $_POST['comment_author'];
+                        $comment_email = $_POST['comment_email'];
+                        $comment_content = $_POST['comment_content'];
+                    
                     }
 
                 ?>
