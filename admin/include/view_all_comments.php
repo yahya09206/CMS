@@ -16,18 +16,18 @@
     <tbody>
         <!--SELECT ALL POSTS QUERY -->
         <?php 
-            $query = "SELECT * FROM comments ";
+            $query = "SELECT * FROM comments";
             $select_comments = mysqli_query($connection, $query);
 
-            while ($row = mysqli_fetch_assoc($select_posts)) {
+            while ($row = mysqli_fetch_assoc($select_comments)) {
                 # code...
                 $comment_id = $row['comment_id'];
-                $comment_author = $row['comment_post_id'];
-                $comment_title = $row['comment_author'];
-                $comment_status = $row['comment_content'];
-                $comment_category_id = $row['comment_email'];
-                $comment_image = $row['comment_status'];
-                $comment_tags = $row['comment_date'];
+                $comment_post_id = $row['comment_post_id'];
+                $comment_author = $row['comment_author'];
+                $comment_content = $row['comment_content'];
+                $comment_email = $row['comment_email'];
+                $comment_status = $row['comment_status'];
+                $comment_date = $row['comment_date'];
 
                 //echo row with fields
                 echo "<tr>";
@@ -48,11 +48,12 @@
 
                 echo "<td>$comment_email</td>";
                 echo "<td>$comment_status</td>";
+                echo "<td>Some Title</td>";
                 echo "<td>$comment_date</td>";
-                echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Approve</a></td>";
-                echo "<td><a href='posts.php?delete={$post_id}'>Unapprove</a></td>";
-                echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
-                echo "<td><a href='posts.php?delete={$post_id}'>Delete</a></td>";
+                echo "<td><a href='posts.php?source=edit_post&p_id='>Approve</a></td>";
+                echo "<td><a href='posts.php?delete='>Unapprove</a></td>";
+                echo "<td><a href='posts.php?source=edit_post&p_id='>Edit</a></td>";
+                echo "<td><a href='posts.php?delete='>Delete</a></td>";
                 echo "</tr>";
             }
         ?>
