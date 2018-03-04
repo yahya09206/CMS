@@ -99,7 +99,7 @@
                 <!-- Query to select everything from comments -->
                 <?php 
                     $query = "SELECT * FROM comments WHERE comment_post_id = {$the_post_id} ";
-                    $query .= "AND comment_status = 'approve' ";
+                    $query .= "AND comment_status = 'approved' ";
                     $query .= "ORDER BY comment_id DESC ";
                     $select_comment_query = mysqli_query($connection, $query);
                     if(!$select_comment_query){
@@ -110,7 +110,7 @@
                         $comment_date = $row['comment_date'];
                         $comment_content = $row['comment_content'];
                         $comment_author = $row['comment_author'];
-                        ?>
+                ?>
                         <!-- Comment -->
                         <div class="media">
                             <a class="pull-left" href="#">
@@ -123,7 +123,7 @@
                                 <?php echo $comment_content; ?>
                             </div>
                         </div>
-                    <?php } ?>
+                <?php } ?>
         </div>
 
         <!-- Blog Sidebar Widgets Column -->
