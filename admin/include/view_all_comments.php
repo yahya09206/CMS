@@ -61,7 +61,7 @@
                 echo "<td>$comment_date</td>";
                 echo "<td><a href='posts.php?source=edit_post&p_id='>Approve</a></td>";
                 echo "<td><a href='posts.php?delete='>Unapprove</a></td>";
-                echo "<td><a href='posts.php?delete='>Delete</a></td>";
+                echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
                 echo "</tr>";
                 // Most update not working!!!!!!!
             }
@@ -76,6 +76,8 @@ if (isset($_GET['delete'])) {
 
     $query = "DELETE FROM comments WHERE comment_id = {$the_comment_id}";
     $delete_query = mysqli_query($connection, $query);
+    //Reload page after deleting
+    header("Location: comments.php");
 
 }
 
