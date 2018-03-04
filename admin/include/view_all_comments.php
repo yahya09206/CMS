@@ -63,6 +63,7 @@
                 echo "<td><a href='posts.php?delete='>Unapprove</a></td>";
                 echo "<td><a href='posts.php?delete='>Delete</a></td>";
                 echo "</tr>";
+                // Most update not working!!!!!!!
             }
         ?>
     </tbody>
