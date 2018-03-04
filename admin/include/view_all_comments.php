@@ -59,7 +59,7 @@
                     echo "<td><a href='../post.php?p_id=$post_id'>$post_title</a></td>";
                 }
                 echo "<td>$comment_date</td>";
-                echo "<td><a href='posts.php?source=edit_post&p_id='>Approve</a></td>";
+                echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>";
                 echo "<td><a href='comments.php?unnapprove=$comment_id'>Unapprove</a></td>";
                 echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
                 echo "</tr>";
@@ -68,13 +68,25 @@
         ?>
     </tbody>
 </table>
-<!-- UNAPPROVE COMMENT -->
-<?php 
+<!-- APPROVE COMMENT -->
+<?php
+if (isset($_GET['approve'])) {
+    # code...
+    $the_comment_id = $_GET['approve'];
+
+    $query = "UPDATE comments SET status = 'approve' ";
+    $approve_comment_query = mysqli_query($connection, $query);
+    //Reload page after deleting
+    header("Location: comments.php");
+
+}
+
+ // UNAPPROVE
 if (isset($_GET['unapprove'])) {
     # code...
-    $the_comment_id = $_GET['delete'];
+    $the_comment_id = $_GET['unapprove'];
 
-    $query = "UPDATE comments SET status = 'unapprove";
+    $query = "UPDATE comments SET status = 'unapprove' ";
     $unapprove_query = mysqli_query($connection, $query);
     //Reload page after deleting
     header("Location: comments.php");
