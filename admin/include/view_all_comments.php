@@ -74,9 +74,9 @@ if (isset($_GET['approve'])) {
     # code...
     $the_comment_id = $_GET['approve'];
 
-    $query = "UPDATE comments SET status = 'approve' ";
+    $query = "UPDATE comments SET comment_status = 'approve' ";
     $approve_comment_query = mysqli_query($connection, $query);
-    //Reload page after deleting
+    //Reload page after approving
     header("Location: comments.php");
 
 }
@@ -86,9 +86,9 @@ if (isset($_GET['unapprove'])) {
     # code...
     $the_comment_id = $_GET['unapprove'];
 
-    $query = "UPDATE comments SET status = 'unapprove' ";
-    $unapprove_query = mysqli_query($connection, $query);
-    //Reload page after deleting
+    $query = "UPDATE comments SET comment_status = 'unapprove' ";
+    $unapprove_comment_query = mysqli_query($connection, $query);
+    //Reload page after unapproving
     header("Location: comments.php");
 
 }
