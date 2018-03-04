@@ -70,6 +70,9 @@
                             # code...
                             die('QUERY FAILED' . mysqli_error($connection));
                         }
+
+                        //QUERY FOR COMMENT COUNT
+                        
                     }
 
                 ?>
