@@ -102,6 +102,15 @@
                     $query .= "AND comment_status = 'approve' ";
                     $query .= "ORDER BY comment_id DESC";
                     $select_comment_query = mysqli_query($connection, $query);
+                    if(!$select_comment_query){
+                        die("QUERY FAILED" . mysqli_error($connection));
+                    }
+                    while ($row = mysqli_fetch_array($select_comment_query)) {
+                        # code...
+                        $comment_date = $row['comment_date'];
+                        $comment_content = $row['comment_content'];
+                        $comment_author = $row['comment_author'];
+                    }
                 ?>
                 <!-- Comment -->
                 <div class="media">
