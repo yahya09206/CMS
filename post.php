@@ -124,7 +124,6 @@
                             </div>
                         </div>
                     <?php } ?>
-
         </div>
 
         <!-- Blog Sidebar Widgets Column -->
