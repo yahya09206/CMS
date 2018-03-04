@@ -60,7 +60,7 @@
                 }
                 echo "<td>$comment_date</td>";
                 echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>";
-                echo "<td><a href='comments.php?unnapprove=$comment_id'>Unapprove</a></td>";
+                echo "<td><a href='comments.php?unapprove=$comment_id'>Unapprove</a></td>";
                 echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
                 echo "</tr>";
                 // Most update not working!!!!!!!
@@ -74,7 +74,7 @@ if (isset($_GET['approve'])) {
     # code...
     $the_comment_id = $_GET['approve'];
 
-    $query = "UPDATE comments SET comment_status = 'approve' ";
+    $query = "UPDATE comments SET comment_status = 'approve' WHERE comment_id = $the_comment_id ";
     $approve_comment_query = mysqli_query($connection, $query);
     //Reload page after approving
     header("Location: comments.php");
@@ -86,7 +86,7 @@ if (isset($_GET['unapprove'])) {
     # code...
     $the_comment_id = $_GET['unapprove'];
 
-    $query = "UPDATE comments SET comment_status = 'unapprove' ";
+    $query = "UPDATE comments SET comment_status = 'unapprove' WHERE comment_id = $the_comment_id ";
     $unapprove_comment_query = mysqli_query($connection, $query);
     //Reload page after unapproving
     header("Location: comments.php");
