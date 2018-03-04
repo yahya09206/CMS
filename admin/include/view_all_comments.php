@@ -60,7 +60,7 @@
                 }
                 echo "<td>$comment_date</td>";
                 echo "<td><a href='posts.php?source=edit_post&p_id='>Approve</a></td>";
-                echo "<td><a href='posts.php?delete='>Unapprove</a></td>";
+                echo "<td><a href='comments.php?unnapprove=$comment_id'>Unapprove</a></td>";
                 echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
                 echo "</tr>";
                 // Most update not working!!!!!!!
@@ -68,8 +68,20 @@
         ?>
     </tbody>
 </table>
-<!-- DELETE COMMENT -->
+<!-- UNAPPROVE COMMENT -->
 <?php 
+if (isset($_GET['unapprove'])) {
+    # code...
+    $the_comment_id = $_GET['delete'];
+
+    $query = "UPDATE comments SET status = 'unapprove";
+    $unapprove_query = mysqli_query($connection, $query);
+    //Reload page after deleting
+    header("Location: comments.php");
+
+}
+
+// DELETE COMMENT
 if (isset($_GET['delete'])) {
     # code...
     $the_comment_id = $_GET['delete'];
