@@ -48,6 +48,10 @@
 
                 echo "<td>$comment_email</td>";
                 echo "<td>$comment_status</td>";
+
+                // Select everything from post
+                $query = "SELECT * FROM posts WHERE post_id = $comment_post_id ";
+                $select_post_id_query = mysqli_query($connection, $query);
                 echo "<td>Some Title</td>";
                 echo "<td>$comment_date</td>";
                 echo "<td><a href='posts.php?source=edit_post&p_id='>Approve</a></td>";
