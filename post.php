@@ -96,7 +96,13 @@
                 <hr>
 
                 <!-- Posted Comments -->
-
+                <!-- Query to select everything from comments -->
+                <?php 
+                    $query = "SELECT * FROM comments WHERE comment_post_id = {$the_post_id}";
+                    $query .= "AND comment_status = 'approve' ";
+                    $query .= "ORDER BY comment_id DESC";
+                    $select_comment_query = mysqli_query($connection, $query);
+                ?>
                 <!-- Comment -->
                 <div class="media">
                     <a class="pull-left" href="#">
