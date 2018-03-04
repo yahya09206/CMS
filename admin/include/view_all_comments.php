@@ -68,13 +68,13 @@
         ?>
     </tbody>
 </table>
-<!-- DELETE POST -->
+<!-- DELETE COMMENT -->
 <?php 
 if (isset($_GET['delete'])) {
     # code...
-    $the_post_id = $_GET['delete'];
+    $the_comment_id = $_GET['delete'];
 
-    $query = "DELETE FROM posts WHERE post_id = {$the_post_id}";
+    $query = "DELETE FROM comments WHERE comment_id = {$the_comment_id}";
     $delete_query = mysqli_query($connection, $query);
 
 }
