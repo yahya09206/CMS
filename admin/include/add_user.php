@@ -1,18 +1,19 @@
 <?php 
-
-	if (isset($_POST['create_post'])) {
+	// Create user query
+	if (isset($_POST['create_user'])) {
 		# code...
-		$post_title = $_POST['title'];
-		$post_author = $_POST['author'];
-		$post_category_id = $_POST['post_category'];
-		$post_status = $_POST['post_status'];
+		$user_id = $_POST['user_id'];
+		$first_name = $_POST['first_name'];
+		$last_name = $_POST['last_name'];
+		$user_role = $_POST['user_role'];
 
-		$post_image = $_FILES['image']['name'];
-		$post_image_temp = $_FILES['image']['tmp_name'];
+		// $post_image = $_FILES['image']['name'];
+		// $post_image_temp = $_FILES['image']['tmp_name'];
 
-		$post_tags = $_POST['post_tag'];
-		$post_content = $_POST['post_content'];
-		$post_date = date('d-m-y');
+		$username = $_POST['username'];
+		$email = $_POST['user_email'];
+		$password = $_POST['user_password'];
+		// $post_date = date('d-m-y');
 		// $post_comment_count = 4;
 
 		// FUNCTION FOR IMAGES
