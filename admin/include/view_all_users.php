@@ -2,14 +2,11 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Author</th>
-            <th>Comment</th>
-            <th>Email </th>
-            <th>Status</th>
-            <th>In Response To</th>
-            <th>Date</th>
-            <th>Approve</th>
-            <th>Unapprove</th>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Role</th>
             <th>Delete</th>
         </tr>
     </thead>
