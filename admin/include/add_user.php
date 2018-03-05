@@ -43,6 +43,11 @@
 		<input class="form-control" type="text" name="last_name">
 	</div>
 
+	<select name="user_role" id="">
+		<option value="subscriber">Select Options</option>
+		<option value="admin">Admin</option>
+		<option value="subscriber">Subscriber</option>
+	</select>
 
 	<!-- <div class="form-group">
 		<label for="post_image">Post Image</label>
