@@ -64,6 +64,26 @@
 ?>
 
 <form action="" method="post" enctype="multipart/form-data">
+    <!-- SELECT USER ROLE -->
+    <!-- <div class="form-group">
+        <select name="post_category" id="">
+            <?php 
+                // $query = "SELECT * FROM users";
+                // $select_users = mysqli_query($connection, $query);
+
+                // confirm($select_users);
+
+                // while ($row = mysqli_fetch_assoc($select_users)) {
+                //     # code...
+                //     $user_id = $row['user_id'];
+                //     $user_role = $row['user_role'];
+
+                //     echo "<option value='$user_id'>{$user_role}</option>";
+                // }
+
+            ?>
+        </select>
+    </div> -->
 
 	<div class="form-group">
 		<label for="title">Post Title</label>
