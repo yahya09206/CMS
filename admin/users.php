@@ -24,7 +24,7 @@
                                     # code...
                                 include "include/add_user.php";
                                     break;
-                                case 'edit_post':
+                                case 'edit_user':
                                     # code...
                                 include "include/edit_user.php";
                                     break;
