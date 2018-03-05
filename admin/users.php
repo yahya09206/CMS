@@ -20,7 +20,7 @@
                             }
 
                             switch ($source) {
-                                case 'add_post':
+                                case 'add_user':
                                     # code...
                                 include "include/add_user.php";
                                     break;
