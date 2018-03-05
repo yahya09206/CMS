@@ -13,18 +13,19 @@
     <tbody>
         <!--SELECT ALL POSTS QUERY -->
         <?php 
-            $query = "SELECT * FROM comments";
-            $select_comments = mysqli_query($connection, $query);
+            $query = "SELECT * FROM users";
+            $select_users = mysqli_query($connection, $query);
 
-            while ($row = mysqli_fetch_assoc($select_comments)) {
+            while ($row = mysqli_fetch_assoc($select_users)) {
                 # code...
-                $comment_id = $row['comment_id'];
-                $comment_post_id = $row['comment_post_id'];
-                $comment_author = $row['comment_author'];
-                $comment_content = $row['comment_content'];
-                $comment_email = $row['comment_email'];
-                $comment_status = $row['comment_status'];
-                $comment_date = $row['comment_date'];
+                $user_id = $row['user_id'];
+                $user_name = $row['username'];
+                $user_password = $row['user_password'];
+                $user_fname = $row['first_name'];
+                $user_lname = $row['last_name'];
+                $user_email = $row['user_email'];
+                $user_image = $row['user_image'];
+                $user_role = $row['user_role'];
 
                 //echo row with fields
                 echo "<tr>";
