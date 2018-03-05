@@ -27,7 +27,7 @@
                             $post_content = substr($row['post_content'], 0,100);
                             $post_status = $row['post_status'];
                             
-                            //Check for post status
+                            //Check for post status DONE WITH COMMENTS
                             if($post_status !== 'published'){
                                 echo "<h1 class='text-center'>NO POSTS HERE</h1>";
                             }else{
