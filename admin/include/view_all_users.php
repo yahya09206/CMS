@@ -7,7 +7,7 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Role</th>
-            <th>Delete</th>
+            <th>Date</th>
         </tr>
     </thead>
     <tbody>
