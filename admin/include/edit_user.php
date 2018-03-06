@@ -39,14 +39,17 @@ if (isset($_GET['edit_user'])) {
         // FUNCTION FOR IMAGES
         // move_uploaded_file($post_image_temp, "../images/$post_image");
         //Tables From Query
-        $query = "INSERT INTO users(first_name, last_name, user_role, username, user_email, user_password) ";
-        //Match Values from variables created 
-        $query .= "VALUES('{$user_fname}','{$user_lname}','{$user_role}','{$username}','{$email}','{$password}') ";
+        $query = "UPDATE users SET ";
+        $query .= "first_name   = '{$user_fname}', ";
+        $query .= "last_name = '{$user_lname}', ";
+        $query .= "user_role   = '$user_role', ";
+        $query .= "user_name  = '{$username}', ";
+        $query .= "user_email  = '{$user_email}', ";
+        $query .= "user_password = '{$user_password}', ";
+        $query .= "WHERE user_id = '{$the_user_id}' ";
+        
 
-        //Inject into DB
-        $create_user_query = mysqli_query($connection, $query);
-
-        confirm($create_user_query);
+        $edit_user_query = mysqli_query($connection, $query);
 
     }
 
