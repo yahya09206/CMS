@@ -105,7 +105,7 @@ if (isset($_GET['edit_user'])) {
     </div>
 
     <div class="form-group">
-        <input class="btn btn-primary" type="submit" name="edit_user" value="Add User">
+        <input class="btn btn-primary" type="submit" name="edit_user" value="Edit User">
     </div>
 
 </form>
