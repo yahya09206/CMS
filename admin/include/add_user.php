@@ -18,9 +18,9 @@
 		// FUNCTION FOR IMAGES
 		// move_uploaded_file($post_image_temp, "../images/$post_image");
 		//Tables From Query
-		$query = "INSERT INTO users(user_id, first_name, last_name, user_role, username, user_email, user_password) ";
+		$query = "INSERT INTO users(first_name, last_name, user_role, username, user_email, user_password) ";
 		//Match Values from variables created 
-		$query .= "VALUES({$user_fname},{$user_lname},{$user_role},{$username},{$email},{$password} ) ";
+		$query .= "VALUES('{$user_fname}','{$user_lname}','{$user_role}','{$username}','{$email}','{$password}') ";
 
 		//Inject into DB
 		$create_user_query = mysqli_query($connection, $query);
