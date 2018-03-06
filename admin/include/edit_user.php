@@ -43,13 +43,14 @@ if (isset($_GET['edit_user'])) {
         $query .= "first_name   = '{$user_fname}', ";
         $query .= "last_name = '{$user_lname}', ";
         $query .= "user_role   = '$user_role', ";
-        $query .= "user_name  = '{$username}', ";
+        $query .= "username  = '{$username}', ";
         $query .= "user_email  = '{$user_email}', ";
-        $query .= "user_password = '{$user_password}', ";
+        $query .= "user_password = '{$user_password}' ";
         $query .= "WHERE user_id = '{$the_user_id}' ";
         
 
         $edit_user_query = mysqli_query($connection, $query);
+        confirm($edit_user_query);
 
     }
 
