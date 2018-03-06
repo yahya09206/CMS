@@ -3,7 +3,22 @@
 //CHECK IF USER GOES TO EDIT USER
 if (isset($_GET['edit_user'])) {
     # code...
-    echo $user_id = $_GET['edit_user'];
+    $the_user_id = $_GET['edit_user'];
+
+    $query = "SELECT * FROM users WHERE user_id = $the_user_id";
+            $select_users_query = mysqli_query($connection, $query);
+
+            while ($row = mysqli_fetch_assoc($select_users_query)) {
+                # code...
+                $user_id = $row['user_id'];
+                echo $user_name = $row['username'];
+                $user_password = $row['user_password'];
+                $user_fname = $row['first_name'];
+                $user_lname = $row['last_name'];
+                $user_email = $row['user_email'];
+                $user_image = $row['user_image'];
+                $user_role = $row['user_role'];
+            }
 }
     // Create user query
     if (isset($_POST['edit_user'])) {
@@ -41,12 +56,12 @@ if (isset($_GET['edit_user'])) {
 <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="first_name">First Name</label>
-        <input class="form-control" type="text" name="first_name">
+        <input class="form-control" value="<?php echo $user_fname ?>" type="text" name="first_name">
     </div>
 
     <div class="form-group">
         <label for="last_name">Last Name</label>
-        <input class="form-control" type="text" name="last_name">
+        <input class="form-control" value="<?php echo $user_lname ?>" type="text" name="last_name">
     </div>
 
     <select name="user_role" id="">
@@ -62,17 +77,17 @@ if (isset($_GET['edit_user'])) {
 
     <div class="form-group">
         <label for="username">Username</label>
-        <input class="form-control" type="text" name="username">
+        <input class="form-control" value="<?php echo $username ?>" type="text" name="username">
     </div>
 
     <div class="form-group">
         <label for="user_email">Email</label>
-        <input type="text" class="form-control" name="user_email">
+        <input type="text" class="form-control" value="<?php echo $user_email ?>"  name="user_email">
     </div>
 
     <div class="form-group">
         <label for="user_password">Password</label>
-        <input type="password" class="form-control" name="user_password">
+        <input type="password" class="form-control" value="<?php echo $user_password ?>"  name="user_password">
     </div>
 
     <div class="form-group">
