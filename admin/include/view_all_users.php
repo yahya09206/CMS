@@ -45,8 +45,8 @@
                 //     $post_title = $row['post_title'];
                 //     echo "<td><a href='../post.php?p_id=$post_id'>$post_title</a></td>";
                 // }
-                // echo "<td><a href='comments.php?approve='>Approve</a></td>";
-                // echo "<td><a href='comments.php?unapprove='>Unapprove</a></td>";
+                echo "<td><a href='comments.php?change_to_admin='>Approve</a></td>";
+                echo "<td><a href='comments.php?change_to_subscriber='>Unapprove</a></td>";
                 echo "<td><a href='users.php?delete=$user_id'>Delete</a></td>";
                 echo "</tr>";
             }
