@@ -2,8 +2,8 @@
 	// Create user query
 	if (isset($_POST['create_user'])) {
 		# code...
-		echo $first_name = $_POST['first_name'];
-		$last_name = $_POST['last_name'];
+		$user_fname = $_POST['first_name'];
+		$user_lname = $_POST['last_name'];
 		$user_role = $_POST['user_role'];
 
 		// $post_image = $_FILES['image']['name'];
@@ -17,10 +17,10 @@
 
 		// FUNCTION FOR IMAGES
 		// move_uploaded_file($post_image_temp, "../images/$post_image");
-
+		//Tables From Query
 		$query = "INSERT INTO users(user_id, first_name, last_name, user_role, username, user_email, user_password) ";
-
-		$query .= "VALUES('{$first_name}','{$last_name}','{$user_role}','{$username}','{$user_email}','{$user_password}' ) ";
+		//Match Values from variables created 
+		$query .= "VALUES({$user_fname},{$user_lname},{$user_role},{$username},{$email},{$password} ) ";
 
 		//Inject into DB
 		$create_user_query = mysqli_query($connection, $query);
@@ -34,12 +34,12 @@
 <!-- FORM FOR CREATING USER -->
 <form action="" method="post" enctype="multipart/form-data">
 	<div class="form-group">
-		<label for="post_author">First Name</label>
+		<label for="first_name">First Name</label>
 		<input class="form-control" type="text" name="first_name">
 	</div>
 
 	<div class="form-group">
-		<label for="post_status">Last Name</label>
+		<label for="last_name">Last Name</label>
 		<input class="form-control" type="text" name="last_name">
 	</div>
 
@@ -55,17 +55,17 @@
 	</div> -->
 
 	<div class="form-group">
-		<label for="post_tag">Username</label>
+		<label for="username">Username</label>
 		<input class="form-control" type="text" name="username">
 	</div>
 
 	<div class="form-group">
-		<label for="post_content">Email</label>
+		<label for="user_email">Email</label>
 		<input type="text" class="form-control" name="user_email">
 	</div>
 
 	<div class="form-group">
-		<label for="post_content">Password</label>
+		<label for="user_password">Password</label>
 		<input type="password" class="form-control" name="user_password">
 	</div>
 

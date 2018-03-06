@@ -57,12 +57,12 @@
                         # code...
                         $the_post_id = $_GET['p_id'];
 
-                        $comment_author = $_POST['comment_author'];
-                        $comment_email = $_POST['comment_email'];
-                        $comment_content = $_POST['comment_content'];
+                        $comment_author = mysqli_real_escape_string($connection, $_POST['comment_author']);
+                        $comment_email = mysqli_real_escape_string($connection, $_POST['comment_email']);
+                        $comment_content = mysqli_real_escape_string($connection, $_POST['comment_content']);
                         //Query to create comment and post
                         $query = "INSERT INTO comments (comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
-                        $query .= "VALUES ($the_post_id, '{$comment_author}', '{$comment_email}', {$comment_content}, unapproved, now())";
+                        $query .= "VALUES({$the_post_id},'{$comment_author}','{$comment_email}','{$comment_content}',unapproved,now())";
 
                         //Query To send to datebase(COMPLETE MOST UPDATE VERSION)
                         $create_comment_query = mysqli_query($connection, $query);
@@ -72,9 +72,9 @@
                         }
 
                         //QUERY FOR COMMENT COUNT
-                        $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 ";
-                        $query .= "WHERE post_id = $the_post_id ";
-                        $update_comment_count = mysqli_query($connection, $query);
+                        // $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 ";
+                        // $query .= "WHERE post_id = $the_post_id ";
+                        // $update_comment_count = mysqli_query($connection, $query);
                     }
 
                 ?>
