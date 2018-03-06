@@ -1,6 +1,12 @@
 <?php 
+
+//CHECK IF USER GOES TO EDIT USER
+if (isset($_GET['edit_user'])) {
+    # code...
+    echo $user_id = $_GET['edit_user'];
+}
     // Create user query
-    if (isset($_POST['create_user'])) {
+    if (isset($_POST['edit_user'])) {
         # code...
         $user_fname = $_POST['first_name'];
         $user_lname = $_POST['last_name'];
@@ -70,7 +76,7 @@
     </div>
 
     <div class="form-group">
-        <input class="btn btn-primary" type="submit" name="create_user" value="Add User">
+        <input class="btn btn-primary" type="submit" name="edit_user" value="Add User">
     </div>
 
 </form>
