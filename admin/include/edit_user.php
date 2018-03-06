@@ -11,7 +11,7 @@ if (isset($_GET['edit_user'])) {
             while ($row = mysqli_fetch_assoc($select_users_query)) {
                 # code...
                 $user_id = $row['user_id'];
-                echo $user_name = $row['username'];
+                $user_name = $row['username'];
                 $user_password = $row['user_password'];
                 $user_fname = $row['first_name'];
                 $user_lname = $row['last_name'];
@@ -77,7 +77,7 @@ if (isset($_GET['edit_user'])) {
 
     <div class="form-group">
         <label for="username">Username</label>
-        <input class="form-control" value="<?php echo $username ?>" type="text" name="username">
+        <input class="form-control" value="<?php echo $user_name ?>" type="text" name="username">
     </div>
 
     <div class="form-group">
