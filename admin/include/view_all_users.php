@@ -47,7 +47,7 @@
                 // }
                 // echo "<td><a href='comments.php?approve='>Approve</a></td>";
                 // echo "<td><a href='comments.php?unapprove='>Unapprove</a></td>";
-                echo "<td><a href='users.php?delete='>Delete</a></td>";
+                echo "<td><a href='users.php?delete=$user_id'>Delete</a></td>";
                 echo "</tr>";
             }
         ?>
