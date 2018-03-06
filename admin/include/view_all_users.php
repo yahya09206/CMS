@@ -7,6 +7,8 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Role</th>
+            <th>Admin</th>
+            <th>Subscriber</th>
             <th>Delete</th>
         </tr>
     </thead>
@@ -53,7 +55,7 @@
         ?>
     </tbody>
 </table>
-<!-- APPROVE COMMENT -->
+<!-- Change to admin -->
 <?php
 if (isset($_GET['change_to_admin'])) {
     # code...
@@ -65,7 +67,7 @@ if (isset($_GET['change_to_admin'])) {
 
 }
 
- // UNAPPROVE
+ // Change to subscriber
 if (isset($_GET['change_to_subscriber'])) {
     # code...
     $the_user_id = $_GET['change_to_subscriber'];
