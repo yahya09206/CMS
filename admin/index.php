@@ -141,8 +141,8 @@
                           ['Data', 'Count'],
                           // ARRAY TO HOLD DATA
                           <?php 
-                            $element_text = ['Active Posts', 'Categories', 'Users', 'Comments'];
-                            $element_count = [$post_counts, $cat_counts, $user_counts, $comment_counts];
+                            $element_text = ['Active Posts', 'Comments', 'Users', 'Categories'];
+                            $element_count = [$post_counts, $comment_counts, $user_counts, $cat_counts];
 
                             //LOOP THROUGH ARRAY OF DIFFERENT DATA
                             for($i = 0; $i < 4; $i++){
