@@ -22,7 +22,11 @@
 		//WHILE LOOP TO GET VALUES FROM DATABASE
 		while ($row = mysqli_fetch_array($select_user_query)) {
 			# code...
-			echo $db_id = $row['user_id'];
+			$db_user_id = $row['user_id'];
+			$fname = $row['first_name'];
+			$lname = $row['last_name'];
+			$role = $row['user_role'];
+
 		}
 	}
 
