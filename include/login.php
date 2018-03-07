@@ -18,6 +18,12 @@
 		if(!$select_user_query){
 			die("QUERY FAILED" . mysqli_error($connection));
 		}
+
+		//WHILE LOOP TO GET VALUES FROM DATABASE
+		while ($row = mysqli_fetch_array($select_user_query)) {
+			# code...
+			echo $db_id = $row['user_id'];
+		}
 	}
 
 
