@@ -20,8 +20,11 @@
 <div class="well">
     <h4>Login</h4>
     <form action="includes/login.php" method="post">
-    <div class="input-group">
+    <div class="form-group">
         <input name="username" type="text" class="form-control" placeholder="enter username">
+    </div>
+    <div class="form-group">
+        <input name="password" type="password" class="form-control" placeholder="enter password">
     </div>
     </form>
     <!-- /.input-group -->
