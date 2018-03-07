@@ -157,11 +157,11 @@
                           ['Data', 'Count'],
                           // ARRAY TO HOLD DATA
                           <?php 
-                            $element_text = ['Active Posts', '$Drafts', 'Comments', 'Users', 'Categories'];
-                            $element_count = [$post_counts, $post_draft_count, $comment_counts, $user_counts, $cat_counts];
+                            $element_text = ['Active Posts', '$Drafts', 'Comments', 'Pending Comments', 'Users', 'Subscribers', 'Categories'];
+                            $element_count = [$post_counts, $post_draft_count, $comment_counts, $unapproved_comm_count, $user_counts, $sub_count, $cat_counts];
 
                             //LOOP THROUGH ARRAY OF DIFFERENT DATA
-                            for($i = 0; $i < 5; $i++){
+                            for($i = 0; $i < 7; $i++){
                                 echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
                             }
                           ?>
