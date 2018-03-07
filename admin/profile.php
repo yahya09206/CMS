@@ -20,6 +20,43 @@
         }
     }
 ?>
+
+<?php 
+
+     if (isset($_POST['edit_user'])) {
+        # code...
+        $user_fname = $_POST['first_name'];
+        $user_lname = $_POST['last_name'];
+        $user_role = $_POST['user_role'];
+
+        // $post_image = $_FILES['image']['name'];
+        // $post_image_temp = $_FILES['image']['tmp_name'];
+
+        $username = $_POST['username'];
+        $email = $_POST['user_email'];
+        $password = $_POST['user_password'];
+        // $post_date = date('d-m-y');
+        // $post_comment_count = 4;
+
+        // FUNCTION FOR IMAGES
+        // move_uploaded_file($post_image_temp, "../images/$post_image");
+        //Tables From Query
+        $query = "UPDATE users SET ";
+        $query .= "first_name   = '{$user_fname}', ";
+        $query .= "last_name = '{$user_lname}', ";
+        $query .= "user_role   = '$user_role', ";
+        $query .= "username  = '{$username}', ";
+        $query .= "user_email  = '{$user_email}', ";
+        $query .= "user_password = '{$user_password}' ";
+        $query .= "WHERE username = '{$username}' ";
+        
+
+        $edit_user_query = mysqli_query($connection, $query);
+        confirm($edit_user_query);
+
+    }
+
+?>
     <div id="wrapper">
         <?php include "include/nav.php" ?>
         <div id="page-wrapper">
