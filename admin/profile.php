@@ -10,7 +10,13 @@
 
         while ($row = mysqli_fetch_array($select_user_profile_query)) {
             # code...
-            
+            $user_id = $row['user_id'];
+            $user_name = $row['username'];
+            $user_password = $row['user_password'];
+            $user_fname = $row['first_name'];
+            $user_lname = $row['last_name'];
+            $user_email = $row['user_email'];
+            $user_role = $row['user_role'];
         }
     }
 ?>
