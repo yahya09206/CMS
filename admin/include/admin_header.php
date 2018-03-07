@@ -3,6 +3,16 @@
 <?php include "../include/db.php" ?>
 <?php include "functions.php" ?>
 
+<!-- CHECK WHICH TYPE OF USER -->
+<?php 
+    if(isset($_SESSION['user_role'])){
+        if ($_SESSION['user_role'] !== 'admin') {
+            # code...
+            header("Location: ../index.php");
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
