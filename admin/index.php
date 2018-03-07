@@ -157,7 +157,7 @@
                         chart.draw(data, google.charts.Bar.convertOptions(options));
                       }
                     </script>
-                    <div id="columnchart_values" style="width: 800px; height: 500px;"></div>
+                    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
                 </div>
                 <!-- /.row -->
             </div>
