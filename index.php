@@ -11,6 +11,7 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
+                <!-- QUERY TO DISPLAY ALL POSTS -->
                 <?php 
                     $query = "SELECT * FROM posts WHERE post_status = 'published' ";
                     $select_all_posts_query = mysqli_query($connection, $query);
@@ -28,9 +29,8 @@
                             $post_status = $row['post_status'];
                             
                             //Check for post status DONE WITH COMMENTS
-                            if($post_status !== 'published'){
-                                echo "<h1 class='text-center'>NO POSTS HERE</h1>";
-                            }else{
+                            if($post_status == 'published'){
+                                
                 ?>
                 <h1 class="page-header">
                     <small>Secondary Text</small>
