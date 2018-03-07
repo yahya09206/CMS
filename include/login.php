@@ -23,12 +23,16 @@
 		while ($row = mysqli_fetch_array($select_user_query)) {
 			# code...
 			$db_user_id = $row['user_id'];
-			$fname = $row['first_name'];
-			$lname = $row['last_name'];
-			$role = $row['user_role'];
+			$db_username = $row['username'];
+			$db_password = $row['user_password'];
+			$db_fname = $row['first_name'];
+			$db_lname = $row['last_name'];
+			$db_role = $row['user_role'];
 
 		}
+		if($username !== $db_username && $password !== $db_password ){
+			header("Location: ../index.php");
+		}
+
 	}
-
-
 ?>
