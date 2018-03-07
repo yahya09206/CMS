@@ -9,7 +9,7 @@
 
 		//escape string prevent sql injection
 		$username = mysqli_real_escape_string($connection, $username);
-		$password = mysqli_real_escape_string($connection, $username);
+		$password = mysqli_real_escape_string($connection, $password);
 
 		// QUICK CHECK
 		$query = "SELECT * FROM users WHERE username = '{$username}' ";
@@ -30,9 +30,15 @@
 			$db_role = $row['user_role'];
 
 		}
+		//ROUTE TO HOME PAGE IF INVALID LOGIN
 		if($username !== $db_username && $password !== $db_password ){
 			header("Location: ../index.php");
+			//REDIRECT TO ADMIN
+		}else if($username === $db_username && $password === $db_password) {
+			# code...
+			header("Location: ../admin");
+		}else{
+			header("Location: ../index.php");
 		}
-
 	}
 ?>
