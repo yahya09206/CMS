@@ -130,6 +130,22 @@
                     </div>
                 </div>
                 <!-- /.row -->
+                <?php 
+                    //query to display drafts
+                    $query = "SELECT * FROM posts WHERE post_status = 'draft'";
+                    $select_all_draft_post = mysqli_query($connection, $query);
+                    $post_draft_count = mysqli_num_rows($select_all_draft_post);
+
+                    //query to display unapproved comments
+                    $query = "SELECT * FROM comments WHERE comment_status = 'unapproved'";
+                    $unapproved_comments = mysqli_query($connection, $query);
+                    $unapproved_comm_count = mysqli_num_rows($unapproved_comments);
+
+                    //query to display subscribers
+                    $query = "SELECT * FROM users WHERE user_role = 'subscriber'";
+                    $select_all_subs = mysqli_query($connection, $query);
+                    $sub_count = mysqli_num_rows($select_all_subs);
+                ?>
 
                 <div class="row">
                     <script type="text/javascript">
@@ -141,11 +157,11 @@
                           ['Data', 'Count'],
                           // ARRAY TO HOLD DATA
                           <?php 
-                            $element_text = ['Active Posts', 'Comments', 'Users', 'Categories'];
-                            $element_count = [$post_counts, $comment_counts, $user_counts, $cat_counts];
+                            $element_text = ['Active Posts', '$Drafts', 'Comments', 'Users', 'Categories'];
+                            $element_count = [$post_counts, $post_draft_count, $comment_counts, $user_counts, $cat_counts];
 
                             //LOOP THROUGH ARRAY OF DIFFERENT DATA
-                            for($i = 0; $i < 4; $i++){
+                            for($i = 0; $i < 5; $i++){
                                 echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
                             }
                           ?>
