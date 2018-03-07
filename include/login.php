@@ -4,7 +4,8 @@
 	
 	if (isset($_POST['login'])) {
 		# code...
-		echo "found";
+		echo $_POST['username'];
+		echo $_POST['password'];
 	}
 
 
