@@ -1,4 +1,19 @@
 <?php include "include/admin_header.php" ?>
+<?php
+    if (isset($_SESSION['username'])) {
+        # code...
+        $username = $_SESSION['username'];
+
+        $query = "SELECT * FROM users WHERE username = '{$username}'";
+
+        $select_user_profile_query = mysqli_query($connection, $query);
+
+        while ($row = mysqli_fetch_array($select_user_profile_query)) {
+            # code...
+            
+        }
+    }
+?>
     <div id="wrapper">
         <?php include "include/nav.php" ?>
         <div id="page-wrapper">
