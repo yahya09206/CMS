@@ -18,15 +18,10 @@
 
 <!-- LOGIN FORM -->
 <div class="well">
-    <h4>Blog Search</h4>
-    <form action="search.php" method="post">
+    <h4>Login</h4>
+    <form action="includes/login.php" method="post">
     <div class="input-group">
-        <input name="search" type="text" class="form-control">
-        <span class="input-group-btn">
-            <button name="submit" class="btn btn-default" type="submit">
-                <span class="glyphicon glyphicon-search"></span>
-        </button>
-        </span>
+        <input name="username" type="text" class="form-control" placeholder="enter username">
     </div>
     </form>
     <!-- /.input-group -->
