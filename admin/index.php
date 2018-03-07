@@ -29,7 +29,7 @@
                                             $select_all_post = mysqli_query($connection, $query);
                                             //count all rows inside of posts table
                                             $post_counts = mysqli_num_rows($select_all_post);
-                                            echo "<div class='huge'>$post_counts</div>";    
+                                            echo "<div class='huge'>{$post_counts}</div>";    
                                         ?>
                                         <div>Posts</div>
                                     </div>
