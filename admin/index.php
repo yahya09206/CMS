@@ -139,7 +139,17 @@
                       function drawChart() {
                         var data = google.visualization.arrayToDataTable([
                           ['Data', 'Count'],
-                          ['Posts', 1000],
+                          // ARRAY TO HOLD DATA
+                          <?php 
+                            $element_text = ['Active Posts', 'Categories', 'Users', 'Comments'];
+                            $element_count = [$post_counts, $cat_counts, $user_counts, $comment_counts];
+
+                            //LOOP THROUGH ARRAY OF DIFFERENT DATA
+                            for($i = 0; $i < 4; $i++){
+                                echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
+                            }
+                          ?>
+                          // ['Posts', 1000],
                         ]);
 
                         var options = {
