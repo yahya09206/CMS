@@ -95,10 +95,21 @@
 		<input value="<?php echo $post_author; ?>" class="form-control" type="text" name="post_author">
 	</div>
 
-	<div class="form-group">
-		<label for="post_status">Post Status</label>
-		<input value="<?php echo $post_status; ?>" class="form-control" type="text" name="post_status">
-	</div>
+    <!-- Dynamic post status selection -->
+    <div class="form-group">
+        <select name="post_status" id="">
+            <option value='<?php echo $post_status; ?>'><?php echo $post_status; ?></option>
+            <?php
+                if ($post_status == 'published') {
+                    # code...
+                    echo "<option value='draft'>Draft</option>";
+                }else{
+                    echo "<option value='published'>Published</option>";
+                }
+            ?>
+        </select>        
+    </div>
+
 
 	<div class="form-group">
 		<img width="100" src="../images/<?php echo $post_image; ?>" alt="">
