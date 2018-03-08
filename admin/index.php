@@ -131,6 +131,11 @@
                 </div>
                 <!-- /.row -->
                 <?php 
+                    //QUERY FOR PUBLISHED POSTS
+                    $query = "SELECT * FROM posts WHERE post_status = 'published'";
+                    $select_all_published_post = mysqli_query($connection, $query);
+                    $post_published_count = mysqli_num_rows($select_all_published_post);
+
                     //query to display drafts
                     $query = "SELECT * FROM posts WHERE post_status = 'draft'";
                     $select_all_draft_post = mysqli_query($connection, $query);
@@ -157,11 +162,11 @@
                           ['Data', 'Count'],
                           // ARRAY TO HOLD DATA
                           <?php 
-                            $element_text = ['Active Posts', '$Drafts', 'Comments', 'Pending Comments', 'Users', 'Subscribers', 'Categories'];
-                            $element_count = [$post_counts, $post_draft_count, $comment_counts, $unapproved_comm_count, $user_counts, $sub_count, $cat_counts];
+                            $element_text = ['All Posts', 'Active Posts', '$Drafts', 'Comments', 'Pending Comments', 'Users', 'Subscribers', 'Categories'];
+                            $element_count = [$post_counts, $post_published_count, $post_draft_count, $comment_counts, $unapproved_comm_count, $user_counts, $sub_count, $cat_counts];
 
                             //LOOP THROUGH ARRAY OF DIFFERENT DATA
-                            for($i = 0; $i < 7; $i++){
+                            for($i = 0; $i < 8; $i++){
                                 echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
                             }
                           ?>
