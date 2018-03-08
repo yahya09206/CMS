@@ -61,5 +61,5 @@
         <!-- /.row -->
 
         <hr>
-
+<!-- DONE WITH BASIC FEATURES!!! 3-5-2018 -->
 <?php include "include/footer.php" ?>
