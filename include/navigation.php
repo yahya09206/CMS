@@ -31,7 +31,7 @@
                         </li>
                     <!-- EDIT POST FROM POST PAGE WHILE LOGGED IN -->
                     <?php 
-                    session_start();
+                    // session_start();
                         if (isset($_SESSION['user_role'])) {
                             # code...
                             if (isset($_GET['p_id'])) {
