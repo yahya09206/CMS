@@ -41,6 +41,7 @@
     <![endif]-->
     <!-- LINK TO GOOGLE CHARTS -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="//cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
 </head>
 
 <body>
