@@ -59,6 +59,9 @@
 
         $update_post = mysqli_query($connection, $query);
         confirm($update_post);
+
+        //UPDATE NOTIFICATION
+        echo "<p>Post Updated. <a href='../post.php?p_id={$the_post_id}'>View Post</a></p>";
     	
     }
 ?>
@@ -123,7 +126,7 @@
 
 	<div class="form-group">
 		<label for="title">Post Content</label>
-		<textarea class="form-contrl" name="post_content" id="" cols="30" rows="10"><?php echo $post_content;?></textarea>
+		<textarea class="form-contrl" name="post_content" id="body" cols="30" rows="10"><?php echo $post_content;?></textarea>
 	</div>
 
 	<div class="form-group">
