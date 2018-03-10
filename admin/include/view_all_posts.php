@@ -38,6 +38,7 @@
                         $post_image = $row['post_image'];
                         $post_tags = $row['post_tag'];
                         $post_comment_count = $row['post_comment_count'];
+                        $post_views_count = $row['post_views'];
                     }
                     //INSERT INTO POSTS TABLE
                     $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_tag, post_status) ";
