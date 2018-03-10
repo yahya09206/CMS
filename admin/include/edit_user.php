@@ -38,6 +38,8 @@ if (isset($_GET['edit_user'])) {
 
         // FUNCTION FOR IMAGES
         // move_uploaded_file($post_image_temp, "../images/$post_image");
+
+        // Encrypt us
         //Tables From Query
         $query = "UPDATE users SET ";
         $query .= "first_name   = '{$user_fname}', ";
