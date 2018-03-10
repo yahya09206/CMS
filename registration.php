@@ -1,5 +1,13 @@
 <?php  include "include/db.php"; ?>
 <?php  include "include/header.php"; ?>
+
+<!-- TEST FORM -->
+<?php 
+if (isset($_POST['submit'])) {
+    # code...
+    echo "its working";
+}
+?>
 <!-- Navigation -->
 <?php  include "include/navigation.php"; ?>
 <!-- Page Content -->
