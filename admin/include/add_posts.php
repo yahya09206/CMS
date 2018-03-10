@@ -65,6 +65,9 @@
 
 	<div class="form-group">
 		<label for="post_status">Post Status</label>
+		<select name="" id="">
+			<option value="draft">Select Options</option>
+		</select>
 		<input class="form-control" type="text" name="post_status">
 	</div>
 
