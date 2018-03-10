@@ -16,7 +16,7 @@
             if (isset($_GET['p_id'])) {
                 # code...
                 $the_post_id = $_GET['p_id'];
-            }
+            
             //Display all posts
                 $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
                 $select_all_posts_query = mysqli_query($connection, $query);
@@ -44,7 +44,13 @@
             <hr>
             <p><?php echo $post_content ?></p>
             <hr>
-            <?php } ?>
+            <?php }
+
+            } else{
+                header("Location: index.php");
+            }
+
+            ?>
 
             <!-- Blog Comments -->
                 <!-- Catch comment date -->
