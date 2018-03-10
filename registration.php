@@ -24,6 +24,12 @@ if (isset($_POST['submit'])) {
             die('QUERY FAILED' . mysqli_error($connection));
         }
 
+        $row = mysqli_fetch_array($select_randsalt_query);
+        $salt = $row['randSalt'];
+
+        //Encrypt password takes two params
+        $password = crypt($password, $salt);
+
         //REGISTER USER
         $query = "INSERT INTO users(username, user_email, user_password, user_role)";
         $query .="VALUES('{$username}', '{$email}', '{$password}', 'subscriber')";
