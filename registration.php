@@ -13,6 +13,13 @@ if (isset($_POST['submit'])) {
     $username  = mysqli_escape_string($connection, $username);
     $email     = mysqli_escape_string($connection, $email);
     $password  = mysqli_escape_string($connection, $password);
+
+    // PASSWORD ENCRYPTION
+    $query = "SELECT randSalt from users";
+    $select_randsalt_query = mysqli_query($connection, $query);
+    if(!select_randsalt_query){
+        die('QUERY FAILED') . mysqli_error($connection);
+    }
 }
 ?>
 <!-- Navigation -->
