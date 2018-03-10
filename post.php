@@ -30,9 +30,6 @@
                         $post_content = $row['post_title'];
 
             ?>
-            <h1 class="page-header">
-                <small>Secondary Text</small>
-            </h1>
 
             <!-- First Blog Post -->
             <h2>
