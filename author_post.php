@@ -18,7 +18,7 @@
                 $the_post_id = $_GET['p_id'];
                 $the_post_author = $_GET['author'];
             }
-            //Display all posts
+            //Display all posts by author
                 $query = "SELECT * FROM posts WHERE post_author = '{$the_post_author}' ";
                 $select_all_posts_query = mysqli_query($connection, $query);
 
@@ -32,7 +32,7 @@
 
             ?>
 
-            <!-- First Blog Post -->
+            <!-- Author Posts -->
             <h2>
                 <a href="#"><?php echo $post_title ?></a>
             </h2>
