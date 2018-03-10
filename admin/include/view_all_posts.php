@@ -1,3 +1,14 @@
+<?php 
+    //CHECK IF ARRAY IS AVAILABLE
+    if (isset($_POST['checkBoxArray'])) {
+        # code...
+        foreach ($_POST['checkBoxArray'] as $checkBoxValue => $value) {
+            # code...
+        }
+    }
+
+?>
+
 <!-- ADDING BULK OPTIONS -->
 <form action="" method="post">
     <table class="table table-bordered table-hover">
