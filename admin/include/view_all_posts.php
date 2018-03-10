@@ -23,6 +23,31 @@
                     $delete = mysqli_query($connection, $query);
                     confirm($delete);
                     break;
+                case 'clone':
+                    # code...
+                    $query = "SELECT * FROM posts WHERE post_id = '{$postValueID}' ";
+                    select_post_query = mysqli_query($connection, $query);
+                    //LOOP THROUGH RESULTS
+                    while ($row = mysqli_fetch_array($select_post_query)) {
+                        # code...
+                        $post_title = $row['post_title'];
+                        $post_category_id = $row['post_category_id'];
+                        $post_date = $row['post_date'];
+                        $post_author = $row['post_author'];
+                        $post_status = $row['post_status'];
+                        $post_image = $row['post_image'];
+                        $post_tags = $row['post_tag'];
+                        $post_comment_count = $row['post_comment_count'];
+                    }
+                    //INSERT INTO POSTS TABLE
+                    $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tag, post_status) ";
+                    $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}' ) ";
+                    $copy_query = mysqli_query($connection, $query);
+                    if (!$copy_query) {
+                        # code...
+                        die("QUERY FAILED" . mysqli_error($connection));
+                    }
+                    break;
                 
                 default:
                     # code...
