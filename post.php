@@ -59,7 +59,7 @@
                             $comment_author = $_POST['comment_author'];
                             $comment_email = $_POST['comment_email'];
                             $comment_content = $_POST['comment_content'];
-                        if (!empty($comment_author) && !empty($comment_email) & !empty($comment_content)) {
+                        if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content)) {
                             # code...
                             //Query to create comment and post
                             $query = "INSERT INTO comments(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
