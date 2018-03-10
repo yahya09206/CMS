@@ -1,15 +1,9 @@
-<?php  include "includes/db.php"; ?>
- <?php  include "includes/header.php"; ?>
-
-
-    <!-- Navigation -->
-    
-    <?php  include "includes/navigation.php"; ?>
-    
- 
-    <!-- Page Content -->
-    <div class="container">
-    
+<?php  include "include/db.php"; ?>
+<?php  include "include/header.php"; ?>
+<!-- Navigation -->
+<?php  include "include/navigation.php"; ?>
+<!-- Page Content -->
+<div class="container">
 <section id="login">
     <div class="container">
         <div class="row">
@@ -38,10 +32,5 @@
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </section>
-
-
-        <hr>
-
-
-
-<?php include "includes/footer.php";?>
+<hr>
+<?php include "include/footer.php";?>
