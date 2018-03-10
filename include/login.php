@@ -32,6 +32,9 @@
 			$db_role = $row['user_role'];
 
 		}
+
+		//Encrypt password takes two params
+        $password = crypt($password, $db_password);
 		//ROUTE TO HOME PAGE IF INVALID LOGIN
 		if($username === $db_username && $password === $db_password){
 			header("Location: ../index.php");
