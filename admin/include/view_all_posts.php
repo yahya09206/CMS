@@ -10,11 +10,18 @@
             //Switch statement for different options
             switch ($bulk_options) {
                 case 'published':
+                case 'draft':
                     # code...
                     //UPDATE POST TO PUBLISHED
                     $query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id = '{$postValueID}' ";
-                    $update_to_published_status = mysqli_query($connection, $query);
-                    confirm($update_to_published_status);
+                    $update_to_status = mysqli_query($connection, $query);
+                    confirm($update_to_status);
+                    break;
+                case 'delete':
+                    # code...
+                    $query = "DELETE FROM posts WHERE post_id = {$postValueID}";
+                    $delete = mysqli_query($connection, $query);
+                    confirm($delete);
                     break;
                 
                 default:
