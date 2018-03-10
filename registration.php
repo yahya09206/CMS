@@ -5,7 +5,14 @@
 <?php 
 if (isset($_POST['submit'])) {
     # code...
-    echo "its working";
+    $username = $_POST['username'];
+    $email    = $_POST['email'];
+    $password = $_POST['password'];
+
+    // PREVENT SQL INJECTION
+    $username  = mysqli_escape_string($connection, $username);
+    $email     = mysqli_escape_string($connection, $email);
+    $password  = mysqli_escape_string($connection, $password);
 }
 ?>
 <!-- Navigation -->
