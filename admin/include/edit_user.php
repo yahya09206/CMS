@@ -4,21 +4,20 @@
 if (isset($_GET['edit_user'])) {
     # code...
     $the_user_id = $_GET['edit_user'];
-
     $query = "SELECT * FROM users WHERE user_id = $the_user_id";
-            $select_users_query = mysqli_query($connection, $query);
+    $select_users_query = mysqli_query($connection, $query);
 
-            while ($row = mysqli_fetch_assoc($select_users_query)) {
-                # code...
-                $user_id = $row['user_id'];
-                $user_name = $row['username'];
-                $user_password = $row['user_password'];
-                $user_fname = $row['first_name'];
-                $user_lname = $row['last_name'];
-                $user_email = $row['user_email'];
-                $user_image = $row['user_image'];
-                $user_role = $row['user_role'];
-            }
+    while ($row = mysqli_fetch_assoc($select_users_query)) {
+        # code...
+        $user_id = $row['user_id'];
+        $user_name = $row['username'];
+        $user_password = $row['user_password'];
+        $user_fname = $row['first_name'];
+        $user_lname = $row['last_name'];
+        $user_email = $row['user_email'];
+        $user_image = $row['user_image'];
+        $user_role = $row['user_role'];
+    }
 }
     // Create user query
     if (isset($_POST['edit_user'])) {
@@ -26,10 +25,6 @@ if (isset($_GET['edit_user'])) {
         $user_fname = $_POST['first_name'];
         $user_lname = $_POST['last_name'];
         $user_role = $_POST['user_role'];
-
-        // $post_image = $_FILES['image']['name'];
-        // $post_image_temp = $_FILES['image']['tmp_name'];
-
         $username = $_POST['username'];
         $email = $_POST['user_email'];
         $password = $_POST['user_password'];
