@@ -16,7 +16,7 @@
         </div>
         <thead>
             <tr>
-                <th><input type="checkbox" id="select" name=""></th>
+                <th><input type="checkbox" id="selectAllBoxes" name=""></th>
                 <th>ID</th>
                 <th>Author</th>
                 <th>Title</th>
@@ -50,6 +50,11 @@
 
                     //echo row with fields
                     echo "<tr>";
+                    ?>
+                    <!-- ADD CHECK BOX TO FIELDS -->
+                    <td><input id='checkBoxes' type='checkbox' name='checkBoxArray[]' value='<?php echo $post_id ?>'></td>
+
+                    <?php
                     echo "<td>$post_id</td>";
                     echo "<td>$post_author</td>";
                     echo "<td>$post_title</td>";
