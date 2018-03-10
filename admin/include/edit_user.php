@@ -77,7 +77,7 @@ if (isset($_GET['edit_user'])) {
     </div>
 
     <select name="user_role" id="">
-    <option value="subscriber"><?php echo $user_role; ?></option>
+    <option value="<?php echo $user_role; ?>"><?php echo $user_role; ?></option>
         <?php  
         //WHICH ROLE TO DISPLAY BASED ON CURRENT ROLE
             if ($user_role == 'admin') {
