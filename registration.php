@@ -9,17 +9,31 @@ if (isset($_POST['submit'])) {
     $email    = $_POST['email'];
     $password = $_POST['password'];
 
-    // PREVENT SQL INJECTION
-    $username  = mysqli_escape_string($connection, $username);
-    $email     = mysqli_escape_string($connection, $email);
-    $password  = mysqli_escape_string($connection, $password);
+    // PREVENT EMPTY FIELDS
+    if (!empty($username) && !empty($email) && !empty($password)) {
+        # code...
+        // PREVENT SQL INJECTION
+        $username  = mysqli_escape_string($connection, $username);
+        $email     = mysqli_escape_string($connection, $email);
+        $password  = mysqli_escape_string($connection, $password);
 
-    // PASSWORD ENCRYPTION
-    $query = "SELECT randSalt from users";
-    $select_randsalt_query = mysqli_query($connection, $query);
-    if(!$select_randsalt_query){
-        die('QUERY FAILED' . mysqli_error($connection));
+        // PASSWORD ENCRYPTION
+        $query = "SELECT randSalt from users";
+        $select_randsalt_query = mysqli_query($connection, $query);
+        if(!$select_randsalt_query){
+            die('QUERY FAILED' . mysqli_error($connection));
+        }
+
+        //REGISTER USER
+        $query = "INSERT INTO users(username, user_email, user_password, user_role)";
+        $query .="VALUES('{$username}', '{$email}', '{$password}', 'subscriber')";
+        $register_user_query = mysqli_query($connection, $query);
+        if(!$register_user_query){
+            die('QUERY FAILED' . mysqli_error($connection));
+        }
+
     }
+
 
     //FETCH DB FOR DEFAULT VALUES
     while ($row = mysqli_fetch_array($select_randsalt_query)) {
