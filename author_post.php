@@ -16,9 +16,10 @@
             if (isset($_GET['p_id'])) {
                 # code...
                 $the_post_id = $_GET['p_id'];
+                $the_post_author = $_GET['author'];
             }
             //Display all posts
-                $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
+                $query = "SELECT * FROM posts WHERE post_author = '{$the_post_author}' ";
                 $select_all_posts_query = mysqli_query($connection, $query);
 
                     while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
