@@ -64,9 +64,8 @@
 	</div>
 
 	<div class="form-group">
-		<label for="post_status">Post Status</label>
 		<select name="post_status" id="">
-			<option value="draft">Select Options</option>
+			<option value="draft">Post Status</option>
 			<option value="published">Published</option>
 			<option value="draft">Draft</option>
 		</select>
