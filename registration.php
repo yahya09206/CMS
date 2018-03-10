@@ -31,14 +31,16 @@ if (isset($_POST['submit'])) {
         if(!$register_user_query){
             die('QUERY FAILED' . mysqli_error($connection));
         }
+            //MESSAGE
+            $message = "Your registration has been submitted";
+
+        }else{
+            $message = "Fields can not be empty";
 
     }
 
-    //MESSAGE
-    $message = "Your registration has been submitted";
-
 }else{
-    $message = "Fields can not be empty";
+    $message = "";
 }
 ?>
 <!-- Navigation -->
