@@ -26,7 +26,7 @@
                 case 'clone':
                     # code...
                     $query = "SELECT * FROM posts WHERE post_id = '{$postValueID}' ";
-                    select_post_query = mysqli_query($connection, $query);
+                    $select_post_query = mysqli_query($connection, $query);
                     //LOOP THROUGH RESULTS
                     while ($row = mysqli_fetch_array($select_post_query)) {
                         # code...
@@ -40,8 +40,8 @@
                         $post_comment_count = $row['post_comment_count'];
                     }
                     //INSERT INTO POSTS TABLE
-                    $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tag, post_status) ";
-                    $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}' ) ";
+                    $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_tag, post_status) ";
+                    $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_tags}','{$post_status}' ) ";
                     $copy_query = mysqli_query($connection, $query);
                     if (!$copy_query) {
                         # code...
