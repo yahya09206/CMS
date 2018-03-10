@@ -22,7 +22,7 @@ $(document).ready(function(){
 	//append to body
 	$("body").prepend(div_box);
 	//remove loader
-	$("#load-screen").deley(700).fadeOut(600, function(){
+	$("#load-screen").delay(700).fadeOut(600, function(){
 		$(this).remove();
 	});
 });
