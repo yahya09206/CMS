@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
 
     // PREVENT SQL INJECTION
-    echo $username  = mysqli_escape_string($connection, $username);
+    $username  = mysqli_escape_string($connection, $username);
     $email     = mysqli_escape_string($connection, $email);
     $password  = mysqli_escape_string($connection, $password);
 }
