@@ -22,6 +22,7 @@
                     //CHECK SESSION
                     if (isset($_SESSION['username'])) {
                         # code...
+                        echo $_SESSION['username'];
                     }
 
                 ?> 
