@@ -46,8 +46,9 @@ if (isset($_GET['edit_user'])) {
             die("QUERY FAILED" . mysqli_error($connection));
         }
 
+        //encrypt pw
         $row = mysqli_fetch_array($select_randsalt_query);
-        $salt = row['randSalt'];
+        $salt = $row['randSalt'];
         $hashed_password = crypt($user_password, $salt);
         // Encrypt us
         //Tables From Query
@@ -72,16 +73,16 @@ if (isset($_GET['edit_user'])) {
 <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="first_name">First Name</label>
-        <input class="form-control" value="<?php echo $user_fname ?>" type="text" name="first_name">
+        <input class="form-control" value="<?php echo $user_fname; ?>" type="text" name="first_name">
     </div>
 
     <div class="form-group">
         <label for="last_name">Last Name</label>
-        <input class="form-control" value="<?php echo $user_lname ?>" type="text" name="last_name">
+        <input class="form-control" value="<?php echo $user_lname; ?>" type="text" name="last_name">
     </div>
 
     <select name="user_role" id="">
-    <option value="subscriber"><?php echo $user_role ?></option>
+    <option value="subscriber"><?php echo $user_role; ?></option>
         <?php  
         //WHICH ROLE TO DISPLAY BASED ON CURRENT ROLE
             if ($user_role == 'admin') {
@@ -103,17 +104,17 @@ if (isset($_GET['edit_user'])) {
 
     <div class="form-group">
         <label for="username">Username</label>
-        <input class="form-control" value="<?php echo $user_name ?>" type="text" name="username">
+        <input class="form-control" value="<?php echo $user_name; ?>" type="text" name="username">
     </div>
 
     <div class="form-group">
         <label for="user_email">Email</label>
-        <input type="text" class="form-control" value="<?php echo $user_email ?>"  name="user_email">
+        <input type="text" class="form-control" value="<?php echo $user_email; ?>"  name="user_email">
     </div>
 
     <div class="form-group">
         <label for="user_password">Password</label>
-        <input type="password" class="form-control" value="<?php echo $user_password ?>"  name="user_password">
+        <input type="password" class="form-control" value="<?php echo $user_password; ?>"  name="user_password">
     </div>
 
     <div class="form-group">
