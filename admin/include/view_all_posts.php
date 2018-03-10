@@ -1,16 +1,30 @@
+<!-- ADDING BULK OPTIONS -->
 <?php 
-    //CHECK IF ARRAY IS AVAILABLE
+    //ARRAY FOR DIFFERENT VALUES SELECTED
     if (isset($_POST['checkBoxArray'])) {
         # code...
-        foreach ($_POST['checkBoxArray'] as $checkBoxValue => $value) {
+        foreach ($_POST['checkBoxArray'] as $postValueID) {
             # code...
             $bulk_options = $_POST['bulk_options'];
+
+            //Switch statement for different options
+            switch ($bulk_options) {
+                case 'published':
+                    # code...
+                    //UPDATE POST TO PUBLISHED
+                    $query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id = '{$postValueID}' ";
+                    $update_to_published_status = mysqli_query($connection, $query);
+                    confirm($update_to_published_status);
+                    break;
+                
+                default:
+                    # code...
+                    break;
+            }
         }
     }
 
 ?>
-
-<!-- ADDING BULK OPTIONS -->
 <form action="" method="post">
     <table class="table table-bordered table-hover">
         <div id="bulkOptionsContainer" class="col-xs-4">
