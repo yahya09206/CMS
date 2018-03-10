@@ -115,8 +115,6 @@
                     echo "</tr>";
                 }
             ?>
-
-
         </tbody>
     </table>
 </form>
