@@ -18,5 +18,11 @@ $(document).ready(function(){
 		}
 	});
 	//LOADER JS
-	
+	var div_box = "<div id='load-screen'><div id='loading'></div></div>"
+	//append to body
+	$("body").prepend(div_box);
+	//remove loader
+	$("#load-screen").deley(700).fadeOut(600, function(){
+		$(this).remove();
+	});
 });
