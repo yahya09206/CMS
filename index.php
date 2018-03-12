@@ -88,8 +88,14 @@
         <!-- LOOP TO REPEAT NUMBERS -->
         <?php 
             for ($i=1; $i <= $count; $i++) { 
-                # code... + GET REQUEST FOR HOW MANY POSTS PER PAGE
-                echo "<li><a href='index.php?page={$i}'>{$i}</a></li>";
+                if ($i == $page) {
+                    # code...
+                    echo "<li '><a class='active_link' href='index.php?page={$i}'>{$i}</a></li>";
+                }else{
+                    # code... + GET REQUEST FOR HOW MANY POSTS PER PAGE
+                    echo "<li '><a href='index.php?page={$i}'>{$i}</a></li>";
+                    
+                }
             }
         ?>
     </ul>
