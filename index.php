@@ -13,6 +13,20 @@
         <div class="col-md-8">
             <!-- QUERY TO DISPLAY ALL POSTS -->
             <?php 
+
+                //LIMIT NUMBER OF POSTS PER PAGE
+                if (isset($_GET['page'])) {
+                    # code...
+                    $page = $_GET['page'];
+                }else{
+                    $page = "";
+                }
+                if ($page = "" || $page == 1) {
+                    # code...
+                    $page_1 = 0;
+                }else {
+                    $page_1 = ($page * 0) - 0;
+                }
                 //query to find out how many posts we have
                 $post_query_count = "SELECT * FROM posts";
                 $find_count = mysqli_query($connection, $post_query_count);
@@ -20,7 +34,8 @@
                 $count = $count / 2;
 
                 // SHOW POSTS
-                $query = "SELECT * FROM posts WHERE post_status = 'published' ";
+                $query = "SELECT * FROM posts LIMIT $page_1, 3";
+                // $query = "SELECT * FROM posts WHERE post_status = 'published' ";
                 $select_all_posts_query = mysqli_query($connection, $query);
 
                     while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
@@ -59,7 +74,6 @@
             <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
             <hr>
             <?php }  }?>
-
         </div>
 
         <!-- Blog Sidebar Widgets Column -->
@@ -74,8 +88,8 @@
         <!-- LOOP TO REPEAT NUMBERS -->
         <?php 
             for ($i=1; $i <= $count; $i++) { 
-                # code...
-                echo "<li><a href=''>{$i}</a></li>";
+                # code... + GET REQUEST FOR HOW MANY POSTS PER PAGE
+                echo "<li><a href='index.php?page={$i}'>{$i}</a></li>";
             }
         ?>
     </ul>
