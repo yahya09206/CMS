@@ -73,9 +73,9 @@
     <ul class="pager">
         <!-- LOOP TO REPEAT NUMBERS -->
         <?php 
-            for ($i=0; $i <= $count; $i++) { 
+            for ($i=1; $i <= $count; $i++) { 
                 # code...
-                echo <li><a href="">[i]</a></li>;
+                echo "<li><a href=''>{$i}</a></li>";
             }
         ?>
     </ul>
