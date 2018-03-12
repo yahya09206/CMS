@@ -89,7 +89,7 @@
         <?php 
             for ($i=1; $i <= $count; $i++) { 
                 if ($i == $page) {
-                    # code...
+                    # code... NEEDS FIXING
                     echo "<li '><a class='active_link' href='index.php?page={$i}'>{$i}</a></li>";
                 }else{
                     # code... + GET REQUEST FOR HOW MANY POSTS PER PAGE
