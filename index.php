@@ -17,6 +17,7 @@
                 $post_query_count = "SELECT * FROM posts";
                 $find_count = mysqli_query($connection, $post_query_count);
                 $count = mysqli_num_rows($find_count);
+                $count = $count / 2;
 
                 // SHOW POSTS
                 $query = "SELECT * FROM posts WHERE post_status = 'published' ";
@@ -68,5 +69,15 @@
     <!-- /.row -->
 
     <hr>
+    <!-- PAGINATION -->
+    <ul class="pager">
+        <!-- LOOP TO REPEAT NUMBERS -->
+        <?php 
+            for ($i=0; $i <= $count; $i++) { 
+                # code...
+                echo <li><a href="">[i]</a></li>;
+            }
+        ?>
+    </ul>
 <!-- DONE WITH BASIC FEATURES!!! 3-5-2018 -->
 <?php include "include/footer.php" ?>
