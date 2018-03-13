@@ -99,5 +99,5 @@
             }
         ?>
     </ul>
-<!-- DONE WITH BASIC FEATURES!!! 3-5-2018 -->
+<!-- DONE WITH PAGINATION-->
 <?php include "include/footer.php" ?>
