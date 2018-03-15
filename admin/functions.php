@@ -1,5 +1,8 @@
 <?php 
 function users_online(){
+	if (isset($_GET['onlineusers'])) {
+		# code...
+	}
 	global $connection;
 	//catch id of session
     $session = session_id();
