@@ -1,5 +1,10 @@
 <?php include "include/admin_header.php" ?>
     <div id="wrapper">
+        <!-- USERS ONLINE FUNCTION -->
+        <?php 
+            //catch id of session
+            $session = session_id();
+        ?>
         <!-- Navigation -->
         <?php include "include/nav.php" ?>
         <div id="page-wrapper">
