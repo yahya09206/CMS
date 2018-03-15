@@ -26,3 +26,13 @@ $(document).ready(function(){
 		$(this).remove();
 	});
 });
+
+//ajax request for not having to refresh page when new users come online
+function noRefresh(){
+	$.get("functions.php?onlineusers=result", function(data){
+		$(".usersonline").text(data);
+	});
+}
+setInterval(function(){
+	noRefresh();
+},500);
