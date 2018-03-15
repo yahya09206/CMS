@@ -1,5 +1,6 @@
 <?php 
 function users_online(){
+	global $connection;
 	//catch id of session
     $session = session_id();
     $time = time();
