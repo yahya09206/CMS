@@ -1,4 +1,5 @@
 <?php 
+//FUNCTION FOR DISPLAYING ONLINE USERS
 function users_online(){
 	if (isset($_GET['onlineusers'])) {
 		# code...
