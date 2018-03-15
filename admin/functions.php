@@ -1,4 +1,28 @@
 <?php 
+function users_online(){
+	//catch id of session
+    $session = session_id();
+    $time = time();
+    $time_out_secs = 60;
+    $time_out = $time - $time_out_secs;
+    //Query to count users
+    $query = "SELECT * FROM users_online WHERE session = '$session'";
+    $send_query = mysqli_query($connection, $query);
+    $count = mysqli_num_rows($send_query);
+    //check for user if null then create new session
+    if ($count == NULL) {
+        # code...
+        //insert into users_online table
+        mysqli_query($connection, "INSERT INTO users_online(session, time) VALUES('$session', '$time')");
+    }else {
+        //if user already exists just update with new time
+        mysqli_query($connection, "UPDATE users_online SET time = '$time' WHERE session = '$session'");
+
+    }
+
+        $users_online_query = mysqli_query($connection, "SELECT * FROM users_online WHERE time > '$time_out'");
+        return $count_user = mysqli_num_rows($users_online_query);
+}
 function confirm($result){
 	global $connection;
 	if (!$result) {
