@@ -1,9 +1,5 @@
 <?php include "include/admin_header.php" ?>
     <div id="wrapper">
-        <!-- USERS ONLINE FUNCTION -->
-        <?php 
-            
-        ?>
         <!-- Navigation -->
         <?php include "include/nav.php" ?>
         <div id="page-wrapper">
@@ -15,7 +11,6 @@
                             Welcome
                             <small><?php echo $_SESSION['username']; ?></small>
                         </h1>
-                        <h1> <?php echo $count_user; ?></h1>
                     </div>
                 </div>
 
