@@ -26,12 +26,12 @@ function users_online(){
 	        mysqli_query($connection, "UPDATE users_online SET time = '$time' WHERE session = '$session'");
 
 	    }
-
 	        $users_online_query = mysqli_query($connection, "SELECT * FROM users_online WHERE time > '$time_out'");
 	        echo $count_user = mysqli_num_rows($users_online_query);
-	    }//get request is set end
-	}
+	    }
+	}//get request is set end
 }
+users_online();
 
 function confirm($result){
 	global $connection;
