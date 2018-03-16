@@ -1,3 +1,4 @@
+<!-- INCLUDE DB AND HEADER PARTIAL -->
 <?php include "include/db.php" ?>
 <?php include "include/header.php" ?>
 
