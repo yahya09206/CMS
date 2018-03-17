@@ -32,8 +32,14 @@ if (isset($_GET['edit_user'])) {
         $email = $_POST['user_email'];
         $password = $_POST['user_password'];
         $post_date = date('d-m-y');
-
-        // Encrypt us
+}
+    if (!empt($user_password)) {
+        # code...
+        $query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
+        $get_user = mysqli_query($connection, $query);
+        confirm($get_user);
+    }
+        // Encrypt pw
         //Tables From Query
         $query = "UPDATE users SET ";
         $query .= "first_name   = '{$user_fname}', ";
