@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         $password  = mysqli_escape_string($connection, $password);
 
         //new password system
-        $password = password_hash($password, PASSWORD_BCRYPT, arracy('cost', => 12));
+        $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
 
         // PASSWORD ENCRYPTION
         // $query = "SELECT randSalt from users";
