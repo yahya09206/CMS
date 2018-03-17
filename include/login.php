@@ -34,9 +34,9 @@
 		}
 
 		//Encrypt password takes two params
-        $password = crypt($password, $db_password);
+        // $password = crypt($password,$db_password);
 		//ROUTE TO HOME PAGE IF INVALID LOGIN
-		if($username === $db_username && $password === $db_password){
+		if(password_verify($password, $db_password)){
 			header("Location: ../index.php");
 			// SET NEW SESSION | ASSIGN FROM RIGHT TO LEFT
 			$_SESSION['username'] = $db_username;
