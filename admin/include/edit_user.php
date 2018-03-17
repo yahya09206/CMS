@@ -35,7 +35,7 @@ if (isset($_GET['edit_user'])) {
     if (!empty($password)) {
         # code...
         $query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
-        $get_user_query = mysqli_query($connection, $query);
+        $get_user_query = mysqli_query($connection, $query_password);
         confirm($get_user_query);
         $row = mysqli_fetch_array($get_user_query);
         $db_password = $row['user_password'];
