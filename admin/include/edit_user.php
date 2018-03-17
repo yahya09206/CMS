@@ -18,6 +18,9 @@ if (isset($_GET['edit_user'])) {
         $user_image = $row['user_image'];
         $user_role = $row['user_role'];
     }
+?>
+<?php 
+
 }
     // Create user query
     if (isset($_POST['edit_user'])) {
@@ -28,23 +31,8 @@ if (isset($_GET['edit_user'])) {
         $username = $_POST['username'];
         $email = $_POST['user_email'];
         $password = $_POST['user_password'];
-        // $post_date = date('d-m-y');
-        // $post_comment_count = 4;
+        $post_date = date('d-m-y');
 
-        // FUNCTION FOR IMAGES
-        // move_uploaded_file($post_image_temp, "../images/$post_image");
-
-        //display shorter password field + encrypt 
-        $query = "SELECT randSalt from users";
-        $select_randsalt_query = mysqli_query($connection, $query);
-        if(!$select_randsalt_query){
-            die("QUERY FAILED" . mysqli_error($connection));
-        }
-
-        //encrypt pw
-        $row = mysqli_fetch_array($select_randsalt_query);
-        $salt = $row['randSalt'];
-        $hashed_password = crypt($user_password, $salt);
         // Encrypt us
         //Tables From Query
         $query = "UPDATE users SET ";
