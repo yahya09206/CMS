@@ -21,7 +21,6 @@ if (isset($_GET['edit_user'])) {
 ?>
 <?php 
 
-}
     // Create user query
     if (isset($_POST['edit_user'])) {
         # code...
@@ -62,6 +61,12 @@ if (isset($_GET['edit_user'])) {
     }
 
 }
+
+//if not get user
+}else {
+    header("Location: index.php");
+}
+
 
 ?>
 
