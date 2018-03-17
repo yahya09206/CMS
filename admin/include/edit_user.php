@@ -32,15 +32,18 @@ if (isset($_GET['edit_user'])) {
         $email = $_POST['user_email'];
         $password = $_POST['user_password'];
         $post_date = date('d-m-y');
-}
-    if (!empt($user_password)) {
+
+    if (!empty($user_password)) {
         # code...
         $query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
         $get_user = mysqli_query($connection, $query);
         confirm($get_user);
         $row = mysqli_fetch_array($get_user);
-
-        $user_password = $row['user_password'];
+        $db_user_password = $row['user_password'];
+    }
+    if ($db_user_password != $user_password) {
+        # code...
+        $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
     }
         // Encrypt pw
         //Tables From Query
@@ -53,7 +56,6 @@ if (isset($_GET['edit_user'])) {
         $query .= "user_password = '{$hashed_password}' ";
         $query .= "WHERE user_id = '{$the_user_id}' ";
         
-
         $edit_user_query = mysqli_query($connection, $query);
         confirm($edit_user_query);
 
