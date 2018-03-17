@@ -8,7 +8,9 @@
 		$username = $_POST['username'];
 		$email = $_POST['user_email'];
 		$password = $_POST['user_password'];
-		
+
+		//new password system
+        $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
 		//Tables From Query
 		$query = "INSERT INTO users(first_name, last_name, user_role, username, user_email, user_password) ";
 		//Match Values from variables created 
