@@ -18,19 +18,20 @@ if (isset($_POST['submit'])) {
         $password  = mysqli_escape_string($connection, $password);
 
         //new password system
+        $password = password_hash($password, PASSWORD_BCRYPT, arracy('cost', => 12));
 
         // PASSWORD ENCRYPTION
-        $query = "SELECT randSalt from users";
-        $select_randsalt_query = mysqli_query($connection, $query);
-        if(!$select_randsalt_query){
-            die('QUERY FAILED' . mysqli_error($connection));
-        }
+        // $query = "SELECT randSalt from users";
+        // $select_randsalt_query = mysqli_query($connection, $query);
+        // if(!$select_randsalt_query){
+        //     die('QUERY FAILED' . mysqli_error($connection));
+        // }
 
-        $row = mysqli_fetch_array($select_randsalt_query);
-        $salt = $row['randSalt'];
+        // $row = mysqli_fetch_array($select_randsalt_query);
+        // $salt = $row['randSalt'];
 
-        //Encrypt password takes two params
-        $password = crypt($password, $salt);
+        // //Encrypt password takes two params
+        // $password = crypt($password, $salt);
 
         //REGISTER USER
         $query = "INSERT INTO users(username, user_email, user_password, user_role)";
