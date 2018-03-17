@@ -33,20 +33,20 @@ if (isset($_GET['edit_user'])) {
         $password = $_POST['user_password'];
         $post_date = date('d-m-y');
 
-    if (!empty($user_password)) {
+    if (!empty($password)) {
         # code...
         $query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
-        $get_user = mysqli_query($connection, $query);
-        confirm($get_user);
-        $row = mysqli_fetch_array($get_user);
-        $db_user_password = $row['user_password'];
-    }
-    if ($db_user_password != $user_password) {
+        $get_user_query = mysqli_query($connection, $query);
+        confirm($get_user_query);
+        $row = mysqli_fetch_array($get_user_query);
+        $db_password = $row['user_password'];
+
+    if ($db_password != $password) {
         # code...
-        $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
     }
         // Encrypt pw
-        //Tables From Query
+        //UPDATE USER
         $query = "UPDATE users SET ";
         $query .= "first_name   = '{$user_fname}', ";
         $query .= "last_name = '{$user_lname}', ";
@@ -58,8 +58,10 @@ if (isset($_GET['edit_user'])) {
         
         $edit_user_query = mysqli_query($connection, $query);
         confirm($edit_user_query);
-
+        echo "User Updated" . "<a href='users.php'> View Users?</a>";
     }
+
+}
 
 ?>
 
