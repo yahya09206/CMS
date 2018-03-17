@@ -38,6 +38,9 @@ if (isset($_GET['edit_user'])) {
         $query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
         $get_user = mysqli_query($connection, $query);
         confirm($get_user);
+        $row = mysqli_fetch_array($get_user);
+
+        $user_password = $row['user_password'];
     }
         // Encrypt pw
         //Tables From Query
