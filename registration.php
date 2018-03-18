@@ -1,6 +1,6 @@
 <?php  include "include/db.php"; ?>
 <?php  include "include/header.php"; ?>
-
+<!-- DONE WITH REGISTRATION -->
 <!-- TEST FORM -->
 <?php 
 if (isset($_POST['submit'])) {

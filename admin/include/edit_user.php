@@ -1,5 +1,5 @@
 <?php 
-
+// FINAL PASSWORD WORKS
 //CHECK IF USER GOES TO EDIT USER
 if (isset($_GET['edit_user'])) {
     # code...
