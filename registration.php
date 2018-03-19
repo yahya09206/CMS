@@ -8,7 +8,6 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $email    = $_POST['email'];
     $password = $_POST['password'];
-
     // PREVENT EMPTY FIELDS
     if (!empty($username) && !empty($email) && !empty($password)) {
         # code...
