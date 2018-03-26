@@ -85,9 +85,9 @@ if (isset($_GET['delete'])) {
     //validate delete user
     if (isset($_SESSION['user_role'])) {
         # code...
-        if (isset($_SESSION['user_role'] == 'admin')) {
+        if ($_SESSION['user_role'] == 'admin') {
             # code...
-            $the_user_id = mysqli_real_escape_string($connection, $_GET['delete'];
+            $the_user_id = mysqli_real_escape_string($connection, $_GET['delete']);
             $query = "DELETE FROM users WHERE user_id = {$the_user_id}";
             $delete_query = mysqli_query($connection, $query);
             //Reload page after deleting
