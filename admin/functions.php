@@ -87,6 +87,11 @@ function findAllCategories(){
     }
 }
 
+//function to prevent sql injection
+function escape($string){
+	mysqli_real_escape_string($connection, trim($string));
+}
+
 function deleteCategories(){
 	global $connection;
 	 //QUERY TO DELETE SELECTED CATEGORY
