@@ -82,13 +82,18 @@ if (isset($_GET['change_to_subscriber'])) {
 
 // DELETE USER
 if (isset($_GET['delete'])) {
-    # code...
-    $the_user_id = $_GET['delete'];
-    $query = "DELETE FROM users WHERE user_id = {$the_user_id}";
-    $delete_query = mysqli_query($connection, $query);
-    //Reload page after deleting
-    header("Location: users.php");
-
+    //validate delete user
+    if (isset($_SESSION['user_role'])) {
+        # code...
+        if (isset($_SESSION['user_role'] == 'admin')) {
+            # code...
+            $the_user_id = mysqli_real_escape_string($connection, $_GET['delete'];
+            $query = "DELETE FROM users WHERE user_id = {$the_user_id}";
+            $delete_query = mysqli_query($connection, $query);
+            //Reload page after deleting
+            header("Location: users.php");
+        }
+    }
 }
 
  ?>
